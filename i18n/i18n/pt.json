@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Início",
+    "projects": "Projetos",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "hero": {
+    "badge": "Fullstack JS/PHP & DevOps",
+    "name": "Jonathan Bessaaa",
+    "role": "Desenvolvedor Fullstack JS/PHP & DevOps",
+    "tagline": "Eu projeto, desenvolvo e implanto aplicações e plataformas confiáveis, performáticas e fáceis de manter.",
+    "cta_projects": "Ver projetos",
+    "cta_contact": "Entrar em contato",
+    "description": "Sou um desenvolvedor apaixonado por criar aplicações web escaláveis e eficientes. Com experiência em JavaScript e PHP, sou especializado na criação de sistemas backend robustos e interfaces de usuário intuitivas.",
+    "available_badge": "Aberto a oportunidades em tempo integral",
+    "download_resume": "Baixar meu CV"
+  }
+}
