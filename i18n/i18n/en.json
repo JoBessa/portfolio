@@ -3,17 +3,84 @@
     "home": "Home",
     "projects": "Projects",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "downloadCv": "Download CV",
+    "language": "Language"
+  },
+  "seo": {
+    "home": {
+      "title": "Fullstack JS/PHP & DevOps Developer",
+      "description": "Portfolio of Jonathan Bessa, a fullstack JS/PHP developer with DevOps expertise focused on reliable, performant and maintainable applications."
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Selection of fullstack and DevOps projects covering product development, architecture, automation and deployment."
+    },
+    "about": {
+      "title": "About",
+      "description": "Profile, background and approach of Jonathan Bessa, fullstack JS/PHP developer with DevOps expertise."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch with Jonathan Bessa for fullstack, architecture or DevOps opportunities."
+    }
   },
   "hero": {
-    "badge": "Fullstack JS/PHP & DevOps",
-    "name": "Jonathan Bessaaa",
+    "greeting": "Fullstack JS/PHP · DevOps",
+    "name": "Jonathan Bessa",
     "role": "Fullstack JS/PHP & DevOps Developer",
-    "tagline": "I design, build and deploy reliable, high-performance and maintainable applications and platforms.",
-    "cta_projects": "View projects",
-    "cta_contact": "Get in touch",
-    "description": "I'm a developer passionate about building scalable and efficient web applications. With expertise in JavaScript and PHP, I specialize in creating robust backend systems and intuitive user interfaces.",
-    "available_badge": "Open to full-time opportunities",
-    "download_resume": "Download my resume"
+    "tagline": "I design, build and deploy reliable, performant and maintainable applications and platforms.",
+    "available_badge": "Open to new opportunities",
+    "unavailable_badge": "Not available at the moment",
+    "download_resume": "Download resume"
+  },
+  "home": {
+    "intro": {
+      "eyebrow": "Positioning",
+      "title": "From product to infrastructure",
+      "description_1": "I work across the full value chain of a web project: interface, business logic, backend, deployment, quality and reliability.",
+      "description_2": "My goal is to build useful products with clean foundations and enough robustness to scale over time."
+    },
+    "focus": {
+      "title": "What I bring",
+      "items": [
+        "Fullstack application development in JavaScript and PHP",
+        "Solid frontend and backend architecture foundations",
+        "Deployment and environment industrialization",
+        "A strong focus on performance, maintainability and clarity"
+      ]
+    },
+    "featured": {
+      "eyebrow": "Selection",
+      "title": "Featured projects",
+      "description": "A few representative projects highlighting my fullstack and DevOps approach.",
+      "cta": "All projects",
+      "view_project": "View project"
+    },
+    "values": {
+      "items": [
+        {
+          "title": "Clarity",
+          "description": "Simple interfaces, readable architecture and technical choices that make sense."
+        },
+        {
+          "title": "Reliability",
+          "description": "Solutions designed to last, remain maintainable and be deployed properly."
+        },
+        {
+          "title": "Impact",
+          "description": "Projects built to solve real problems, not just to showcase technology."
+        }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Let's talk",
+      "title": "Let’s discuss your project or your needs",
+      "description": "I’m open to fullstack development, application architecture and DevOps opportunities.",
+      "cta": "Contact me",
+      "secondary_cta": "See my projects"
+    }
   }
 }
