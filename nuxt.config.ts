@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  typescript: {
+    typeCheck: true,
+    strict: true,
+  },
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
@@ -10,6 +15,18 @@ export default defineNuxtConfig({
     'motion-v/nuxt',
     '@nuxtjs/i18n'
   ],
+
+  eslint: {
+    config: {
+      stylistic: {
+        indent: 2,
+        quotes: 'single',
+        semi: false,
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
+  },
 
   devtools: {
     enabled: true
@@ -37,14 +54,5 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     strategy: 'no_prefix',
     langDir: 'i18n/'
-  },
-
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
   }
 })
