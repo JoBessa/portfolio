@@ -7,7 +7,15 @@
     "darkMode": "Dark mode",
     "lightMode": "Light mode",
     "downloadCv": "Download CV",
-    "language": "Language"
+    "language": "Language",
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode",
+    "menu": "Menu",
+    "lang": {
+      "en": "English",
+      "fr": "French",
+      "pt": "Portuguese"
+    }
   },
   "seo": {
     "home": {

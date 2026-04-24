@@ -4,10 +4,6 @@
     const { t } = useI18n()
 
     const navLinks: NavigationMenuItem[] = [{
-        label: t('nav.home'),
-        icon: 'i-lucide-home',
-        to: '/'
-    }, {
         label: t('nav.projects'),
         icon: 'i-lucide-folder',
         to: '/projects'

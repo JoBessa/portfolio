@@ -7,7 +7,15 @@
     "darkMode": "Mode sombre",
     "lightMode": "Mode clair",
     "downloadCv": "Voir mon CV",
-    "language": "Langue"
+    "language": "Langue",
+    "switchToDark": "Passer au mode sombre",
+    "switchToLight": "Passer au mode clair",
+    "menu": "Menu",
+    "lang": {
+      "en": "Anglais",
+      "fr": "Français",
+      "pt": "Portugais"
+    }
   },
   "seo": {
     "home": {

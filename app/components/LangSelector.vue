@@ -16,13 +16,13 @@ const localeItems: { label: string; value: AppLocale }[] = [
 
             <!-- bouton langue -->
             <UButton variant="ghost"
-                :class="locale === l.value ? 'text-primary font-semibold p-0 cursor-pointer' : 'text-gray-500 p-0 cursor-pointer'"
+                :class="locale === l.value ? 'text-primary font-semibold p-0 cursor-pointer' : 'text-muted p-0 cursor-pointer'"
                 @click="setLocale(l.value)">
                 {{ l.label }}
             </UButton>
 
             <!-- séparateur -->
-            <span v-if="index < localeItems.length - 1" class="mx-2 text-gray-400">
+            <span v-if="index < localeItems.length - 1" class="mx-2 text-muted">
                 ·
             </span>
 
