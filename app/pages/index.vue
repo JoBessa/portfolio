@@ -10,5 +10,6 @@ useSeoMeta({
 <template>
   <UPage>
     <LandingHero />
+    <LandingExpertise />
   </UPage>
 </template>
