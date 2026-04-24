@@ -3,17 +3,92 @@
     "home": "Accueil",
     "projects": "Projets",
     "about": "À propos",
-    "contact": "Contact"
+    "contact": "Contact",
+    "darkMode": "Mode sombre",
+    "lightMode": "Mode clair",
+    "downloadCv": "Voir mon CV",
+    "language": "Langue",
+    "switchToDark": "Passer au mode sombre",
+    "switchToLight": "Passer au mode clair",
+    "menu": "Menu",
+    "lang": {
+      "en": "Anglais",
+      "fr": "Français",
+      "pt": "Portugais"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Développeur Fullstack JS/PHP & DevOps",
+      "description": "Portfolio de Jonathan Bessa, développeur fullstack JS/PHP avec une expertise DevOps, orienté applications fiables, performantes et maintenables."
+    },
+    "projects": {
+      "title": "Projets",
+      "description": "Sélection de projets fullstack et DevOps : conception, développement, architecture, automatisation et déploiement."
+    },
+    "about": {
+      "title": "À propos",
+      "description": "Profil, parcours et approche de Jonathan Bessa, développeur fullstack JS/PHP avec une expertise DevOps."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Contacter Jonathan Bessa pour une collaboration, un poste ou un échange autour de projets fullstack et DevOps."
+    }
   },
   "hero": {
-    "badge": "Fullstack JS/PHP & DevOps",
-    "name": "Jonathan Bessaaa",
+    "greeting": "Fullstack JS/PHP · DevOps",
+    "name": "Jonathan Bessa",
     "role": "Développeur Fullstack JS/PHP & DevOps",
     "tagline": "Je conçois, développe et déploie des applications et plateformes fiables, performantes et maintenables.",
-    "cta_projects": "Voir les projets",
-    "cta_contact": "Me contacter",
-    "description": "Je suis un développeur passionné par la création d'applications web scalables et efficaces. Avec une expertise en JavaScript et PHP, je me spécialise dans la conception de systèmes backend robustes et d'interfaces utilisateur intuitives.",
     "available_badge": "À l'écoute d'opportunités en CDI",
+    "unavailable_badge": "Non disponible actuellement",
     "download_resume": "Télécharger mon CV"
+  },
+  "home": {
+    "intro": {
+      "eyebrow": "Positionnement",
+      "title": "Du produit à l’infrastructure",
+      "description_1": "J’interviens sur toute la chaîne de valeur d’un projet web : interface, logique métier, backend, déploiement, qualité et fiabilité.",
+      "description_2": "Mon objectif est de construire des produits utiles, propres techniquement et suffisamment robustes pour évoluer dans le temps."
+    },
+    "focus": {
+      "title": "Ce que j’apporte",
+      "items": [
+        "Conception d’applications fullstack en JavaScript et PHP",
+        "Structuration de bases solides côté frontend et backend",
+        "Industrialisation du déploiement et des environnements",
+        "Approche orientée performance, maintenabilité et clarté"
+      ]
+    },
+    "featured": {
+      "eyebrow": "Sélection",
+      "title": "Projets mis en avant",
+      "description": "Quelques projets représentatifs de mon approche fullstack et DevOps.",
+      "cta": "Tous les projets",
+      "view_project": "Voir le projet"
+    },
+    "values": {
+      "items": [
+        {
+          "title": "Clarté",
+          "description": "Une interface simple, une architecture lisible et des choix techniques compréhensibles."
+        },
+        {
+          "title": "Fiabilité",
+          "description": "Des solutions pensées pour durer, se maintenir et être déployées proprement."
+        },
+        {
+          "title": "Impact",
+          "description": "Des projets conçus pour résoudre un vrai besoin, pas seulement pour démontrer de la technique."
+        }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Échange",
+      "title": "Parlons de votre projet ou de votre besoin",
+      "description": "Je suis ouvert à des opportunités de développement fullstack, d’architecture applicative et de sujets DevOps.",
+      "cta": "Entrer en contact",
+      "secondary_cta": "Voir mes projets"
+    }
   }
 }

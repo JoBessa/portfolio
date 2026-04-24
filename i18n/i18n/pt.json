@@ -3,17 +3,92 @@
     "home": "Início",
     "projects": "Projetos",
     "about": "Sobre",
-    "contact": "Contato"
+    "contact": "Contacto",
+    "darkMode": "Modo escuro",
+    "lightMode": "Modo claro",
+    "downloadCv": "Baixar CV",
+    "language": "Língua",
+    "switchToDark": "Mudar para modo escuro",
+    "switchToLight": "Mudar para modo claro",
+    "menu": "Menu",
+    "lang": {
+      "en": "Inglês",
+      "fr": "Francês",
+      "pt": "Português"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Desenvolvedor Fullstack JS/PHP e DevOps",
+      "description": "Portfólio de Jonathan Bessa, desenvolvedor fullstack JS/PHP com experiência em DevOps, focado em aplicações fiáveis, performantes e fáceis de manter."
+    },
+    "projects": {
+      "title": "Projetos",
+      "description": "Seleção de projetos fullstack e DevOps: desenvolvimento, arquitetura, automação e deployment."
+    },
+    "about": {
+      "title": "Sobre",
+      "description": "Perfil, percurso e abordagem de Jonathan Bessa, desenvolvedor fullstack JS/PHP com experiência em DevOps."
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "Entrar em contacto com Jonathan Bessa para oportunidades em fullstack, arquitetura aplicacional ou DevOps."
+    }
   },
   "hero": {
-    "badge": "Fullstack JS/PHP & DevOps",
-    "name": "Jonathan Bessaaa",
-    "role": "Desenvolvedor Fullstack JS/PHP & DevOps",
-    "tagline": "Eu projeto, desenvolvo e implanto aplicações e plataformas confiáveis, performáticas e fáceis de manter.",
-    "cta_projects": "Ver projetos",
-    "cta_contact": "Entrar em contato",
-    "description": "Sou um desenvolvedor apaixonado por criar aplicações web escaláveis e eficientes. Com experiência em JavaScript e PHP, sou especializado na criação de sistemas backend robustos e interfaces de usuário intuitivas.",
-    "available_badge": "Aberto a oportunidades em tempo integral",
-    "download_resume": "Baixar meu CV"
+    "greeting": "Fullstack JS/PHP · DevOps",
+    "name": "Jonathan Bessa",
+    "role": "Desenvolvedor Fullstack JS/PHP e DevOps",
+    "tagline": "Concebo, desenvolvo e faço deployment de aplicações e plataformas fiáveis, performantes e fáceis de manter.",
+    "available_badge": "Disponível para novos projetos",
+    "unavailable_badge": "Não disponível no momento",
+    "download_resume": "Download resume"
+  },
+  "home": {
+    "intro": {
+      "eyebrow": "Posicionamento",
+      "title": "Do produto à infraestrutura",
+      "description_1": "Trabalho em toda a cadeia de valor de um projeto web: interface, lógica de negócio, backend, deployment, qualidade e fiabilidade.",
+      "description_2": "O meu objetivo é criar produtos úteis, tecnicamente limpos e suficientemente robustos para evoluir ao longo do tempo."
+    },
+    "focus": {
+      "title": "O que eu trago",
+      "items": [
+        "Desenvolvimento de aplicações fullstack em JavaScript e PHP",
+        "Bases sólidas de arquitetura no frontend e backend",
+        "Industrialização de deployment e ambientes",
+        "Foco em performance, manutenção e clareza"
+      ]
+    },
+    "featured": {
+      "eyebrow": "Seleção",
+      "title": "Projetos em destaque",
+      "description": "Alguns projetos representativos da minha abordagem fullstack e DevOps.",
+      "cta": "Todos os projetos",
+      "view_project": "Ver projeto"
+    },
+    "values": {
+      "items": [
+        {
+          "title": "Clareza",
+          "description": "Interfaces simples, arquitetura legível e escolhas técnicas coerentes."
+        },
+        {
+          "title": "Fiabilidade",
+          "description": "Soluções pensadas para durar, ser mantidas e serem colocadas em produção corretamente."
+        },
+        {
+          "title": "Impacto",
+          "description": "Projetos criados para resolver necessidades reais, não apenas para mostrar tecnologia."
+        }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Vamos falar",
+      "title": "Vamos falar sobre o seu projeto ou necessidade",
+      "description": "Estou disponível para oportunidades em desenvolvimento fullstack, arquitetura aplicacional e temas DevOps.",
+      "cta": "Entrar em contacto",
+      "secondary_cta": "Ver os meus projetos"
+    }
   }
 }
