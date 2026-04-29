@@ -47,8 +47,8 @@
   "hero": {
     "greeting": "Fullstack JS/PHP · DevOps",
     "name": "Jonathan Bessa",
-    "role": "Développeur Fullstack JS/PHP & DevOps",
-    "tagline": "Je conçois, développe et déploie des applications et plateformes fiables, performantes et maintenables.",
+    "role": "Développeur fullstack JavaScript / PHP avec une forte culture DevOps",
+    "tagline": "Je conçois et développe des applications web scalables, en mettant l’accent sur la performance, la fiabilité et la qualité de l’architecture.",
     "available_badge": "Ouvert aux opportunités",
     "download_resume": "Télécharger le CV"
   },

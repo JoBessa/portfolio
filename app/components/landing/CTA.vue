@@ -12,7 +12,13 @@ const links = {
     <UPageSection>
         <UPageCard class="overflow-hidden" variant="naked">
             <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-                <div class="max-w-2xl">
+                <Motion
+                    :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+                    :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+                    :transition="{ delay: 0.2, duration: 0.5 }"
+                    :in-view-options="{ once: true }"
+                    class="max-w-2xl"
+                >
                     <UBadge :label="t('home.contact.eyebrow')" color="neutral" variant="subtle" class="mb-4" />
 
                     <h2 class="text-3xl font-semibold tracking-tight text-(--ui-text-highlighted) sm:text-4xl">
@@ -29,9 +35,15 @@ const links = {
                         <UBadge :label="t('home.contact.hybrid')" color="neutral" variant="subtle" />
                         <UBadge :label="t('home.contact.status')" color="neutral" variant="subtle" />
                     </div>
-                </div>
+                </Motion>
 
-                <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+                <Motion
+                    :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+                    :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+                    :transition="{ delay: 0.4, duration: 0.5 }"
+                    :in-view-options="{ once: true }"
+                    class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row"
+                >
                     <UButton :to="links.email" icon="i-lucide-mail" size="lg">
                         {{ t('home.contact.cta') }}
                     </UButton>
@@ -40,7 +52,7 @@ const links = {
                         size="lg">
                         {{ t('projects.button') }}
                     </UButton>
-                </div>
+                </Motion>
             </div>
         </UPageCard>
     </UPageSection>

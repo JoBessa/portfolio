@@ -44,18 +44,25 @@ const stats = computed<ImpactStat[]>(() => [
         <UPageGrid :ui="{
             base: 'lg:grid-cols-4'
         }">
-            <UPageCard v-for="stat in stats" :key="stat.label" class="overflow-hidden" variant="naked">
-                <div class="text-4xl font-black tracking-tight leading-none text-primary">
-                    {{ stat.value }}
-                </div>
-                <div class="text-xs text-muted font-semibold">
-                    {{ stat.label }}
-                </div>
-                <div class="text-xs text-muted">
-                    {{ stat.description }}
-                </div>
-                <UIcon :name="stat.icon" class="size-18 opacity-10 text-muted absolute -top-2 -right-2" />
-            </UPageCard>
+            <Motion v-for="(stat, index) in stats" :key="stat.label"
+                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+                :transition="{ delay: 0.2 + 0.15 * index, duration: 0.5 }"
+                :in-view-options="{ once: true }"
+            >
+                <UPageCard class="overflow-hidden" variant="naked">
+                    <div class="text-4xl font-black tracking-tight leading-none text-primary">
+                        {{ stat.value }}
+                    </div>
+                    <div class="text-xs text-muted font-semibold">
+                        {{ stat.label }}
+                    </div>
+                    <div class="text-xs text-muted">
+                        {{ stat.description }}
+                    </div>
+                    <UIcon :name="stat.icon" class="size-18 opacity-10 text-muted absolute -top-2 -right-2" />
+                </UPageCard>
+            </Motion>
         </UPageGrid>
     </UPageSection>
 </template>

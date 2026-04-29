@@ -14,7 +14,7 @@ interface ArsenalCard {
     class?: string
 }
 
-const cards: ArsenalCard[] = [
+const cards = computed<ArsenalCard[]>(() => [
     {
         title: t('home.arsenal.fullstack.title'),
         description: t('home.arsenal.fullstack.description'),
@@ -80,7 +80,7 @@ const cards: ArsenalCard[] = [
         ],
         class: 'lg:col-span-3',
     }
-]
+])
 </script>
 
 <template>
@@ -90,18 +90,24 @@ const cards: ArsenalCard[] = [
         <UPageGrid :ui="{
             base: 'relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4'
         }">
-            <UPageCard :class="card.class" v-for="(card, index) in cards" :key="index" :title="card.title"
-                variant="subtle" :description="card.description">
-                <template #footer>
-                    <div class="flex items-center gap-3">
-                        <UTooltip v-for="tech in card.techs" :key="tech.name" :text="tech.label" class="cursor-pointer">
-                            <UBadge color="primary">
-                                <UIcon :name="tech.name" class="size-6" />
-                            </UBadge>
-                        </UTooltip>
-                    </div>
-                </template>
-            </UPageCard>
+            <Motion v-for="(card, index) in cards" :key="index" :class="card.class"
+                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+                :transition="{ delay: 0.15 + 0.1 * index, duration: 0.5 }"
+                :in-view-options="{ once: true }"
+            >
+                <UPageCard :title="card.title" variant="subtle" :description="card.description" class="h-full">
+                    <template #footer>
+                        <div class="flex items-center gap-3">
+                            <UTooltip v-for="tech in card.techs" :key="tech.name" :text="tech.label" class="cursor-pointer">
+                                <UBadge color="primary">
+                                    <UIcon :name="tech.name" class="size-6" />
+                                </UBadge>
+                            </UTooltip>
+                        </div>
+                    </template>
+                </UPageCard>
+            </Motion>
         </UPageGrid>
     </UPageSection>
 </template>

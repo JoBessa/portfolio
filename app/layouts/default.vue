@@ -8,16 +8,16 @@ const navLinks = computed<NavigationMenuItem[]>(() => [
   {
     label: t('nav.projects'),
     icon: 'i-lucide-folder',
-    to: localePath('/projects')
+    to: '/projects'
   }, {
     label: t('nav.about'),
     icon: 'i-lucide-file-text',
-    to: '/blog'
+    to: '#about'
   },
   {
     label: t('nav.contact'),
     icon: 'i-lucide-user',
-    to: '/about'
+    to: '#contact'
   }])
 </script>
 
