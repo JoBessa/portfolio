@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from '@nuxt/ui'
 
+type LocaleMenuItem = DropdownMenuItem & { loc: string }
+
 const { t, locale, setLocale, availableLocales } = useI18n()
 const colorMode = useColorMode()
 
@@ -8,12 +10,10 @@ const startViewTransition = (toDark: boolean) => {
     const switchTheme = () => {
         colorMode.preference = toDark ? 'dark' : 'light'
     }
-
     if (!document.startViewTransition) {
         switchTheme()
         return
     }
-
     document.startViewTransition(switchTheme).ready.then(() => {
         document.documentElement.animate(
             { clipPath: ['circle(0px at 50% 0%)', 'circle(150% at 50% 0%)'] },
@@ -22,7 +22,7 @@ const startViewTransition = (toDark: boolean) => {
     })
 }
 
-const items = computed<DropdownMenuItem[][]>(() => [
+const items = computed<(DropdownMenuItem | LocaleMenuItem)[][]>(() => [
     [
         {
             label: colorMode.value === 'dark' ? t('nav.lightMode') : t('nav.darkMode'),
@@ -42,14 +42,16 @@ const items = computed<DropdownMenuItem[][]>(() => [
             download: 'Jonathan_Bessa_CV.pdf',
         },
     ],
-    availableLocales.map((loc) => ({
-        label: loc === 'fr' ? 'Français' : loc === 'en' ? 'English' : 'Português',
-        slot: 'language-item',
-        loc: loc,
-        onSelect() {
-            setLocale(loc)
-        },
-    })),
+    [
+        ...availableLocales.map((loc): LocaleMenuItem => ({
+            label: loc === 'fr' ? 'Français' : loc === 'en' ? 'English' : 'Português',
+            slot: 'language-item',
+            loc,
+            onSelect() {
+                setLocale(loc)
+            },
+        })),
+    ],
 ])
 </script>
 
@@ -58,8 +60,9 @@ const items = computed<DropdownMenuItem[][]>(() => [
         <UButton color="neutral" variant="ghost" icon="i-lucide-menu" />
         <template #language-item="{ item }">
             <div class="flex items-center justify-between w-full">
-                <span>{{ item.label }}</span>
-                <UIcon v-if="locale === item.loc" name="i-lucide-check" class="size-4 text-primary" />
+                <span>{{ (item as LocaleMenuItem).label }}</span>
+                <UIcon v-if="locale === (item as LocaleMenuItem).loc" name="i-lucide-check"
+                    class="size-4 text-primary" />
             </div>
         </template>
     </UDropdownMenu>
