@@ -17,6 +17,15 @@
       "pt": "Portuguese"
     }
   },
+   "projects": {
+    "title": "Projects",
+    "description": "A selection of fullstack and DevOps projects reflecting my approach to architecture, automation and deployment.",
+    "cta": "View on GitHub",
+    "demo": "Live demo",
+    "all": "All projects",
+    "featured_label": "Featured",
+    "button": "View projects"
+  },
   "seo": {
     "home": {
       "title": "Fullstack JS/PHP & DevOps Developer",
@@ -41,7 +50,6 @@
     "role": "Fullstack JS/PHP & DevOps Developer",
     "tagline": "I design, build and deploy reliable, performant and maintainable applications and platforms.",
     "available_badge": "Open to new opportunities",
-    "unavailable_badge": "Not available at the moment",
     "download_resume": "Download resume"
   },
   "home": {
@@ -83,12 +91,99 @@
         }
       ]
     },
+    "impact": {
+      "title": "Measurable Impact",
+      "SLA": {
+        "title": "Average SLA across production services",
+        "description": "High availability systems maintained"
+      },
+      "IaC": {
+        "title": "Infra Costs Cloud architecture optimization",
+        "description": "AWS cost & performance tuning"
+      },
+      "CI/CD": {
+        "title": "Deployments CI/CD fully automated",
+        "description": "From commit to production"
+      },
+      "experience": {
+        "title": "Years Experience production-grade systems",
+        "description": "Fullstack & DevOps ownership"
+      }
+    },
+    "philosophy": {
+      "title": "Engineering Philosophy",
+      "description": "How I think about systems.",
+      "visibility": {
+        "title": "Visibility & Reliability",
+        "description": "You can’t fix what you can’t see. I build observable systems with logging, metrics and monitoring to ensure reliability in production."
+      },
+      "reproduce": {
+        "title": "Reproducible Systems",
+        "description": "Infrastructure and environments should be consistent. I use automation and IaC principles to eliminate drift and reduce human error."
+      },
+      "scalable": {
+        "title": "Scalable by Design",
+        "description": "Performance and developer experience go hand in hand. I design systems that scale while staying simple to build, test and maintain."
+      }
+    },
+    "arsenal": {
+      "title": "Technical Arsenal",
+      "description": "My technical skills and tools",
+      "fullstack": {
+        "title": "Fullstack Architecture",
+        "description": "Design and build end-to-end applications from frontend to backend with a strong focus on maintainability and performance."
+      },
+      "backend": {
+        "title": "Backend & Data Systems",
+        "description": "Build robust APIs and data layers with efficient querying, caching strategies and scalable database design."
+      },
+      "cloud": {
+        "title": "Cloud & Infrastructure",
+        "description": "Deploy and operate production systems with scalable, resilient and cost-efficient cloud architectures."
+      },
+      "cicd": {
+        "title": "CI/CD & Automation",
+        "description": "Automate delivery pipelines to ensure fast, reliable and repeatable deployments across environments."
+      },
+      "performance": {
+        "title": "Performance & Reliability",
+        "description": "Optimize systems for speed and uptime with monitoring, debugging and proactive performance tuning."
+      }
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "A selection of fullstack and DevOps projects reflecting my approach to architecture, automation and deployment.",
+      "viewAll": "View all projects",
+      "readMore": "Read more",
+      "liveDemo": "Live demo"
+    },
+    "aboutme": {
+      "title": "Experiences",
+      "summary": "As a full-stack developer and consultant experienced in building scalable web applications using Nuxt, Next.js, Laravel and Symfony, I design robust, high-performance, user-centered digital products. I combine engineering discipline, cloud expertise (AWS), and product thinking to turn complex requirements into reliable and maintainable solutions, with a focus on long-term (CDI) opportunities.",
+      "workExp": "Work Experience",
+      "present": "Present",
+      "at": "at",
+      "seniorDev": {
+        "full": "Fullstack & DevOps",
+        "short": "Fullstack"
+      },
+      "juniorDev": {
+        "full": "Junior Fullstack Developer",
+        "short": "Junior Dev"
+      },
+      "apprenticeDev": {
+        "full": "Apprentice Fullstack Developer",
+        "short": "Apprentice"
+      }
+    },
     "contact": {
-      "eyebrow": "Let's talk",
-      "title": "Let’s discuss your project or your needs",
-      "description": "I’m open to fullstack development, application architecture and DevOps opportunities.",
+      "eyebrow": "Open to permanent opportunities",
+      "title": "Let’s build reliable web products together.",
+      "description": "I’m a Full-Stack Web Developer and DevOps Engineer based in Paris, currently open to a full-time permanent role (CDI). I build modern, scalable and maintainable applications, from frontend interfaces to backend services and deployment workflows.",
       "cta": "Contact me",
-      "secondary_cta": "See my projects"
+      "fulltime": "Fulltime CDI",
+      "hybrid": "Hybrid / On-site",
+      "status": "Full-stack + DevOps"
     }
   }
 }

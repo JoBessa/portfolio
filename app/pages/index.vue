@@ -10,6 +10,11 @@ useSeoMeta({
 <template>
   <UPage>
     <LandingHero />
-    <LandingExpertise />
+    <LandingMesurableImpact />
+    <LandingPhilosophy />
+    <LandingTechnicalArsenal />
+    <LandingProject />
+    <LandingExperiences />
+    <LandingCTA />
   </UPage>
 </template>

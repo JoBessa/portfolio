@@ -6,10 +6,10 @@
     "contact": "Contact",
     "darkMode": "Mode sombre",
     "lightMode": "Mode clair",
-    "downloadCv": "Voir mon CV",
+    "downloadCv": "Télécharger le CV",
     "language": "Langue",
-    "switchToDark": "Passer au mode sombre",
-    "switchToLight": "Passer au mode clair",
+    "switchToDark": "Passer en mode sombre",
+    "switchToLight": "Passer en mode clair",
     "menu": "Menu",
     "lang": {
       "en": "Anglais",
@@ -17,22 +17,31 @@
       "pt": "Portugais"
     }
   },
+  "projects": {
+    "title": "Projets",
+    "description": "Une sélection de projets fullstack et DevOps reflétant mon approche de l’architecture, de l’automatisation et du déploiement.",
+    "cta": "Voir sur GitHub",
+    "demo": "Démo en ligne",
+    "all": "Tous les projets",
+    "featured_label": "Mis en avant",
+    "button": "Voir les projets"
+  },
   "seo": {
     "home": {
       "title": "Développeur Fullstack JS/PHP & DevOps",
-      "description": "Portfolio de Jonathan Bessa, développeur fullstack JS/PHP avec une expertise DevOps, orienté applications fiables, performantes et maintenables."
+      "description": "Portfolio de Jonathan Bessa, développeur fullstack JS/PHP avec expertise DevOps, orienté applications fiables, performantes et maintenables."
     },
     "projects": {
       "title": "Projets",
-      "description": "Sélection de projets fullstack et DevOps : conception, développement, architecture, automatisation et déploiement."
+      "description": "Sélection de projets fullstack et DevOps couvrant le développement produit, l’architecture, l’automatisation et le déploiement."
     },
     "about": {
       "title": "À propos",
-      "description": "Profil, parcours et approche de Jonathan Bessa, développeur fullstack JS/PHP avec une expertise DevOps."
+      "description": "Profil, parcours et approche de Jonathan Bessa, développeur fullstack JS/PHP avec expertise DevOps."
     },
     "contact": {
       "title": "Contact",
-      "description": "Contacter Jonathan Bessa pour une collaboration, un poste ou un échange autour de projets fullstack et DevOps."
+      "description": "Contactez Jonathan Bessa pour des opportunités en fullstack, architecture ou DevOps."
     }
   },
   "hero": {
@@ -40,24 +49,23 @@
     "name": "Jonathan Bessa",
     "role": "Développeur Fullstack JS/PHP & DevOps",
     "tagline": "Je conçois, développe et déploie des applications et plateformes fiables, performantes et maintenables.",
-    "available_badge": "À l'écoute d'opportunités en CDI",
-    "unavailable_badge": "Non disponible actuellement",
-    "download_resume": "Télécharger mon CV"
+    "available_badge": "Ouvert aux opportunités",
+    "download_resume": "Télécharger le CV"
   },
   "home": {
     "intro": {
       "eyebrow": "Positionnement",
       "title": "Du produit à l’infrastructure",
       "description_1": "J’interviens sur toute la chaîne de valeur d’un projet web : interface, logique métier, backend, déploiement, qualité et fiabilité.",
-      "description_2": "Mon objectif est de construire des produits utiles, propres techniquement et suffisamment robustes pour évoluer dans le temps."
+      "description_2": "Mon objectif est de construire des produits utiles avec des bases solides et suffisamment robustes pour évoluer dans le temps."
     },
     "focus": {
       "title": "Ce que j’apporte",
       "items": [
-        "Conception d’applications fullstack en JavaScript et PHP",
-        "Structuration de bases solides côté frontend et backend",
-        "Industrialisation du déploiement et des environnements",
-        "Approche orientée performance, maintenabilité et clarté"
+        "Développement d’applications fullstack en JavaScript et PHP",
+        "Bases solides en architecture frontend et backend",
+        "Industrialisation des déploiements et des environnements",
+        "Forte attention à la performance, la maintenabilité et la clarté"
       ]
     },
     "featured": {
@@ -71,24 +79,111 @@
       "items": [
         {
           "title": "Clarté",
-          "description": "Une interface simple, une architecture lisible et des choix techniques compréhensibles."
+          "description": "Des interfaces simples, une architecture lisible et des choix techniques cohérents."
         },
         {
           "title": "Fiabilité",
-          "description": "Des solutions pensées pour durer, se maintenir et être déployées proprement."
+          "description": "Des solutions conçues pour durer, maintenables et correctement déployées."
         },
         {
           "title": "Impact",
-          "description": "Des projets conçus pour résoudre un vrai besoin, pas seulement pour démontrer de la technique."
+          "description": "Des projets conçus pour résoudre de vrais problèmes, pas uniquement démontrer de la technologie."
         }
       ]
     },
+    "impact": {
+      "title": "Impact mesurable",
+      "SLA": {
+        "title": "SLA moyen sur les services en production",
+        "description": "Systèmes à haute disponibilité maintenus"
+      },
+      "IaC": {
+        "title": "Optimisation des coûts d’infrastructure cloud",
+        "description": "Optimisation coûts & performance AWS"
+      },
+      "CI/CD": {
+        "title": "Déploiements CI/CD entièrement automatisés",
+        "description": "Du commit à la production"
+      },
+      "experience": {
+        "title": "Années d’expérience sur des systèmes en production",
+        "description": "Responsabilité Fullstack & DevOps"
+      }
+    },
+    "philosophy": {
+      "title": "Philosophie d’ingénierie",
+      "description": "Ma façon de concevoir les systèmes.",
+      "visibility": {
+        "title": "Visibilité & Fiabilité",
+        "description": "On ne peut pas corriger ce que l’on ne voit pas. Je construis des systèmes observables avec logs, métriques et monitoring pour garantir la fiabilité en production."
+      },
+      "reproduce": {
+        "title": "Systèmes reproductibles",
+        "description": "Les infrastructures et environnements doivent être cohérents. J’utilise l’automatisation et l’IaC pour éliminer les dérives et réduire les erreurs humaines."
+      },
+      "scalable": {
+        "title": "Scalable par conception",
+        "description": "Performance et expérience développeur vont de pair. Je conçois des systèmes qui passent à l’échelle tout en restant simples à construire, tester et maintenir."
+      }
+    },
+    "arsenal": {
+      "title": "Stack technique",
+      "description": "Mes compétences et outils",
+      "fullstack": {
+        "title": "Architecture Fullstack",
+        "description": "Conception et développement d’applications de bout en bout avec un fort accent sur la maintenabilité et la performance."
+      },
+      "backend": {
+        "title": "Backend & Data",
+        "description": "Création d’APIs robustes et de couches de données efficaces avec stratégies de cache et bases de données scalables."
+      },
+      "cloud": {
+        "title": "Cloud & Infrastructure",
+        "description": "Déploiement et exploitation de systèmes en production avec des architectures cloud scalables, résilientes et optimisées en coût."
+      },
+      "cicd": {
+        "title": "CI/CD & Automatisation",
+        "description": "Automatisation des pipelines pour des déploiements rapides, fiables et reproductibles."
+      },
+      "performance": {
+        "title": "Performance & Fiabilité",
+        "description": "Optimisation des systèmes en termes de rapidité et disponibilité grâce au monitoring et au tuning proactif."
+      }
+    },
+    "projects": {
+      "title": "Projets",
+      "description": "Une sélection de projets fullstack et DevOps.",
+      "viewAll": "Voir tous les projets",
+      "readMore": "En savoir plus",
+      "liveDemo": "Démo"
+    },
+    "aboutme": {
+      "title": "Expériences",
+      "summary": "Développeur fullstack et consultant expérimenté, je conçois des applications web scalables avec Nuxt, Next.js, Laravel et Symfony. Je combine rigueur technique, expertise cloud (AWS) et vision produit pour transformer des besoins complexes en solutions fiables et maintenables, avec un intérêt particulier pour des opportunités long terme (CDI).",
+      "workExp": "Expérience professionnelle",
+      "present": "Aujourd’hui",
+      "at": "chez",
+      "seniorDev": {
+        "full": "Fullstack & DevOps",
+        "short": "Fullstack"
+      },
+      "juniorDev": {
+        "full": "Développeur Fullstack Junior",
+        "short": "Junior"
+      },
+      "apprenticeDev": {
+        "full": "Développeur Fullstack en alternance",
+        "short": "Alternant"
+      }
+    },
     "contact": {
-      "eyebrow": "Échange",
-      "title": "Parlons de votre projet ou de votre besoin",
-      "description": "Je suis ouvert à des opportunités de développement fullstack, d’architecture applicative et de sujets DevOps.",
-      "cta": "Entrer en contact",
-      "secondary_cta": "Voir mes projets"
+      "eyebrow": "Ouvert aux opportunités en CDI",
+      "title": "Construisons des produits web fiables ensemble.",
+      "description": "Développeur Fullstack et ingénieur DevOps basé à Paris, actuellement ouvert à un poste en CDI. Je développe des applications modernes, scalables et maintenables, de l’interface frontend jusqu’au déploiement.",
+      "cta": "Me contacter",
+      "fulltime": "CDI",
+      "hybrid": "Hybride / Présentiel",
+      "status": "Fullstack + DevOps"
     }
   }
 }

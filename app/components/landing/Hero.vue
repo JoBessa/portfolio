@@ -3,29 +3,26 @@ const { t } = useI18n()
 
 const links = [
   {
+    label: t('projects.button'),
+    to: '/projects',
+    trailingIcon: 'lucide-arrow-right',
+    variant: 'solid'
+  },
+  {
     label: t('hero.download_resume'),
     to: "mailto:[EMAIL_ADDRESS]",
-    icon: "i-lucide-download"
+    icon: 'lucide-download',
+    variant: 'outline'
   }
 ];
 </script>
 
 <template>
   <UPageHero :title="t('hero.name')" :links="links" orientation="horizontal" :ui="{
-    wrapper: 'order-last md:order-first',
-    container: 'lg:grid-cols-[1fr_1fr] lg:items-center',
+    container: 'h-full lg:grid-cols-[1fr_1fr] lg:items-center',
+    wrapper: 'flex flex-col justify-center',
   }">
     <template #headline>
-      <UBadge color="neutral" variant="subtle">{{ t('hero.greeting') }}</UBadge>
-    </template>
-    <template #description>
-      <p>{{ t('hero.role') }}</p>
-      <p>{{ t('hero.tagline') }}</p>
-    </template>
-    <template #links>
-      <UButton v-for="link in links" :key="link.to" :href="link.to" :icon="link.icon">
-        {{ link.label }}
-      </UButton>
       <UButton color="success" variant="ghost" class="gap-2 cursor-pointer" :label="t('hero.available_badge')">
         <template #leading>
           <span class="relative flex size-2">
@@ -35,7 +32,19 @@ const links = [
         </template>
       </UButton>
     </template>
-    <UColorModeImage class="rounded-md aspect-square object-cover mx-auto" light="/images/me-light.png"
-      dark="/images/me-dark.jpg" />
+    <template #description>
+      <p>{{ t('hero.role') }}</p>
+      <p>{{ t('hero.tagline') }}</p>
+    </template>
+    <template #links>
+      <UButton v-for="link in links" :key="link.to" :href="link.to" :icon="link.icon" :variant="link.variant"
+        :trailing-icon="link.trailingIcon">
+        {{ link.label }}
+      </UButton>
+    </template>
+    <div class="flex items-center justify-center h-full">
+      <UColorModeImage width="300" height="300" class="rounded-md aspect-square object-cover"
+        light="/images/me-light.png" dark="/images/me-dark.jpg" />
+    </div>
   </UPageHero>
 </template>
