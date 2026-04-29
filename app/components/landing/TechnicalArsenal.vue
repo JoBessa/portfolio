@@ -84,9 +84,19 @@ const cards = computed<ArsenalCard[]>(() => [
 </script>
 
 <template>
-    <UPageSection :title="t('home.arsenal.title')" :description="t('home.arsenal.description')" :ui="{
+    <UPageSection :description="t('home.arsenal.description')" :ui="{
         container: 'py-0 sm:py-0 lg:py-0'
     }">
+        <template #title>
+            <Motion
+                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+                :transition="{ duration: 0.5 }"
+                :in-view-options="{ once: true }"
+            >
+                {{ t('home.arsenal.title') }}
+            </Motion>
+        </template>
         <UPageGrid :ui="{
             base: 'relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4'
         }">

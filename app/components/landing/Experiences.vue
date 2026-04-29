@@ -49,18 +49,14 @@ const experiences: Experience[] = [
         <UPageGrid :ui="{
             base: 'lg:grid-cols-2'
         }">
-            <Motion
-                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ delay: 0.2, duration: 0.5 }"
-                :in-view-options="{ once: true }"
-                class="w-full"
-            >
-                <p class="text-neutral font-bold text-xl mb-4">About Me</p>
+            <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ delay: 0.2, duration: 0.5 }"
+                :in-view-options="{ once: true }" class="w-full">
+                <p class="text-neutral font-bold text-xl mb-4 text-center sm:test-start">About Me</p>
                 <p class="text-muted text-balance">{{ t('home.aboutme.summary') }}</p>
             </Motion>
             <div class="w-full">
-                <p class="text-neutral font-bold text-xl mb-4">Work Experience</p>
+                <p class="text-neutral font-bold text-xl mb-4 text-center sm:text-start">Work Experience</p>
                 <div class="flex flex-col gap-4 text-neutral text-xs sm:text-sm">
                     <Motion v-for="(experience, index) in experiences" :key="index"
                         :initial="{ opacity: 0, transform: 'translateY(20px)' }"

@@ -38,9 +38,19 @@ const stats = computed<ImpactStat[]>(() => [
 </script>
 
 <template>
-    <UPageSection :title="t('home.impact.title')" :ui="{
+    <UPageSection :ui="{
         container: 'py-0 sm:py-0 lg:py-0'
     }">
+        <template #title>
+            <Motion
+                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+                :transition="{ duration: 0.5 }"
+                :in-view-options="{ once: true }"
+            >
+                {{ t('home.impact.title') }}
+            </Motion>
+        </template>
         <UPageGrid :ui="{
             base: 'lg:grid-cols-4'
         }">

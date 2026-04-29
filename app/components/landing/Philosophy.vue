@@ -36,7 +36,17 @@ const stats = computed<PhilosophyStat[]>(() => [
 </script>
 
 <template>
-    <UPageSection :title="t('home.philosophy.title')" :description="t('home.philosophy.description')">
+    <UPageSection :description="t('home.philosophy.description')">
+        <template #title>
+            <Motion
+                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+                :transition="{ duration: 0.5 }"
+                :in-view-options="{ once: true }"
+            >
+                {{ t('home.philosophy.title') }}
+            </Motion>
+        </template>
         <UPageGrid>
             <Motion v-for="(stat, index) in stats" :key="stat.id"
                 :initial="{ opacity: 0, transform: 'translateY(20px)' }"

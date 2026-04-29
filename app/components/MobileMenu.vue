@@ -37,32 +37,30 @@ const items = computed<DropdownMenuItem[][]>(() => [
         {
             label: t('nav.downloadCv'),
             icon: 'i-lucide-download',
-            to: '/cv.pdf',
+            to: '/documents/Jonathan_Bessa_CV.pdf',
             target: '_blank',
+            download: 'Jonathan_Bessa_CV.pdf',
         },
     ],
-    [
-        {
-            label: t('nav.language'),
-            icon: 'i-lucide-languages',
-            children: availableLocales.map((loc) => ({
-                label: loc === 'fr' ? 'Français' : loc === 'en' ? 'English' : 'Português',
-                slot: loc as string,
-                onSelect(e: Event) {
-                    e.preventDefault()
-                    setLocale(loc)
-                },
-            })),
+    availableLocales.map((loc) => ({
+        label: loc === 'fr' ? 'Français' : loc === 'en' ? 'English' : 'Português',
+        slot: 'language-item',
+        loc: loc,
+        onSelect() {
+            setLocale(loc)
         },
-    ],
+    })),
 ])
 </script>
 
 <template>
     <UDropdownMenu :items="items" :content="{ align: 'end' }" :ui="{ content: 'w-48' }">
         <UButton color="neutral" variant="ghost" icon="i-lucide-menu" />
-        <template v-for="loc in availableLocales" :key="loc" #[`${loc}-trailing`]>
-            <UIcon v-if="locale === loc" name="i-lucide-check" class="size-4 ms-auto" />
+        <template #language-item="{ item }">
+            <div class="flex items-center justify-between w-full">
+                <span>{{ item.label }}</span>
+                <UIcon v-if="locale === item.loc" name="i-lucide-check" class="size-4 text-primary" />
+            </div>
         </template>
     </UDropdownMenu>
 </template>

@@ -13,7 +13,7 @@ const { data: projects } = await useAsyncData(
 </script>
 
 <template>
-    <UPageSection :title="t('projects.title')" :description="t('projects.description')" :links="[{
+    <UPageSection :description="t('projects.description')" :links="[{
         label: t('home.projects.viewAll'),
         to: '/projects',
         color: 'neutral',
@@ -21,6 +21,16 @@ const { data: projects } = await useAsyncData(
         trailingIcon: 'i-lucide-arrow-right',
         size: 'sm'
     }]">
+        <template #title>
+            <Motion
+                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+                :transition="{ duration: 0.5 }"
+                :in-view-options="{ once: true }"
+            >
+                {{ t('projects.title') }}
+            </Motion>
+        </template>
         <div v-if="projects?.length" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <Motion v-for="(project, index) in projects" :key="project.path"
                 :initial="{ opacity: 0, transform: 'translateY(20px)' }"

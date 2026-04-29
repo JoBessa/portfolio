@@ -6,6 +6,12 @@ const localePath = useLocalePath()
 
 const navLinks = computed<NavigationMenuItem[]>(() => [
   {
+    label: t('nav.home'),
+    icon: 'i-lucide-home',
+    to: '/',
+    class: 'sm:hidden'
+  },
+  {
     label: t('nav.projects'),
     icon: 'i-lucide-folder',
     to: '/projects'
