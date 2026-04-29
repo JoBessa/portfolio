@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import type { ButtonProps } from '#ui/types'
+
 const { t } = useI18n()
 
-const links = computed(() => [
+const links = computed<ButtonProps[]>(() => [
   {
     label: t('projects.button'),
     to: '/projects',
@@ -47,7 +49,7 @@ const links = computed(() => [
       </Motion>
     </template>
     <template #links>
-      <Motion v-for="(link, index) in links" :key="link.to" :initial="{ opacity: 0, transform: 'translateY(10px)' }"
+      <Motion v-for="(link, index) in links" :key="link.label" :initial="{ opacity: 0, transform: 'translateY(10px)' }"
         :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
         :transition="{ delay: 0.5 + 0.1 * index, duration: 0.4 }" :in-view-options="{ once: true }">
         <UButton size="lg" :to="link.to" :external="link.external" :download="link.download" :icon="link.icon"
