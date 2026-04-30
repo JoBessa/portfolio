@@ -4,7 +4,7 @@ const { t } = useI18n()
 
 <template>
     <UPageSection :ui="{
-        container: 'pb-4 sm:pb-4 lg:pb-8 pt-6 sm:pt-12 lg:pt-18'
+        container: 'pb-4 sm:pb-4 lg:pb-8 pt-12 sm:pt-12 lg:pt-18'
     }">
         <UPageCard class="overflow-hidden" variant="naked">
             <div class="flex flex-col gap-8">
