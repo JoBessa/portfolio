@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 const { data: page } = await useAsyncData(
     () => `about-${locale.value}`,
     () => queryCollection('about')
@@ -13,6 +13,13 @@ if (!page.value) {
 
 // TypeScript sait qu'ici page.value ne peut pas être null
 const aboutPage = computed(() => page.value!)
+
+useSeoMeta({
+    title: () => t('seo.about.title'),
+    ogTitle: () => t('seo.about.title'),
+    description: () => t('seo.about.description'),
+    ogDescription: () => t('seo.about.description')
+})
 </script>
 
 <template>

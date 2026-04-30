@@ -29,21 +29,22 @@
     "description_page": "Projetos e desenvolvo aplicações web escaláveis, desde interfaces frontend a arquiteturas backend e pipelines de implementação. O meu foco é engenharia limpa, performance e manutenibilidade em toda a stack."
   },
   "seo": {
+    "titleTemplate": "%s | Jonathan Bessa - Desenvolvedor Fullstack & DevOps",
     "home": {
       "title": "Desenvolvedor Fullstack JS/PHP & DevOps",
-      "description": "Portfólio de Jonathan Bessa, desenvolvedor fullstack JS/PHP com experiência em DevOps focado em aplicações fiáveis e de alta performance."
+      "description": "Portfólio de Jonathan Bessa, desenvolvedor fullstack JS/PHP com experiência em DevOps. Descubra os meus projetos, abordagem e perfil para oportunidades permanentes (CDI)."
     },
     "projects": {
-      "title": "Projetos",
-      "description": "Seleção de projetos fullstack e DevOps abrangendo desenvolvimento de produtos, arquitetura, automação e implementação."
+      "title": "Projetos Fullstack & DevOps",
+      "description": "Seleção de projetos fullstack e DevOps abrangendo desenvolvimento de produtos, arquitetura, automação e implementação. Portfólio focado em oportunidades CDI."
     },
     "about": {
-      "title": "Sobre",
-      "description": "Perfil, trajetória e abordagem de Jonathan Bessa, desenvolvedor fullstack JS/PHP com experiência em DevOps."
+      "title": "Sobre Mim",
+      "description": "Perfil, trajetória e filosofia de Jonathan Bessa, desenvolvedor fullstack JS/PHP com experiência em DevOps, disponível para oportunidades permanentes (CDI)."
     },
     "contact": {
-      "title": "Contacto",
-      "description": "Entre em contacto com Jonathan Bessa para oportunidades em fullstack, arquitetura ou DevOps."
+      "title": "Contacto & Oportunidades",
+      "description": "Entre em contacto com Jonathan Bessa para discutir oportunidades permanentes (CDI) como desenvolvedor fullstack, arquiteto ou engenheiro DevOps."
     }
   },
   "hero": {

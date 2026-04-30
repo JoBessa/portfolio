@@ -1,7 +1,12 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-useSeoMeta({ title: t('contact.seo.title') })
+useSeoMeta({
+    title: () => t('seo.contact.title'),
+    ogTitle: () => t('seo.contact.title'),
+    description: () => t('seo.contact.description'),
+    ogDescription: () => t('seo.contact.description')
+})
 
 const name = ref('')
 const email = ref('')

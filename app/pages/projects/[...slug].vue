@@ -16,6 +16,13 @@ const { data: project } = await useAsyncData(
             .first(),
     { watch: [slug, locale] }
 )
+
+useSeoMeta({
+    title: () => project.value?.title || t('seo.projects.title'),
+    ogTitle: () => project.value?.title || t('seo.projects.title'),
+    description: () => project.value?.description || t('seo.projects.description'),
+    ogDescription: () => project.value?.description || t('seo.projects.description')
+})
 </script>
 
 <template>
