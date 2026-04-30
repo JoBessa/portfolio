@@ -20,7 +20,8 @@ useHead({
 
 useSeoMeta({
   titleTemplate: '%s | Jonathan Bessa',
-  ogImage: '/images/signature-dark.png',
+  ogImage: '/images/me-light.png',
+  twitterImage: '/images/me-light.png',
   twitterCard: 'summary_large_image'
 })
 </script>
