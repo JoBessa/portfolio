@@ -29,7 +29,7 @@ const navLinks = computed<NavigationMenuItem[]>(() => [
 
 <template>
   <div>
-    <UContainer class="sm:border-x border-default px-48">
+    <UContainer class="sm:border-x border-default">
       <AppHeader :links="navLinks" />
       <slot />
       <AppFooter />
