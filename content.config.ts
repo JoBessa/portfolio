@@ -32,5 +32,15 @@ export default defineContentConfig({
         })).optional(),
       }),
     }),
+    about: defineCollection({
+      type: 'page',
+      source: 'about/**.yml',
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        locale: z.enum(['en', 'fr', 'pt']),
+        content: z.string().optional()
+      })
+    })
   },
 })

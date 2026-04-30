@@ -4,17 +4,24 @@ export default defineAppConfig({
       primary: 'indigo',
       neutral: 'slate',
     },
-     pageSection: {
+    pageHero: {
+      slots: {
+        container: 'py-18 sm:py-24 lg:py-32',
+        title: 'mx-auto max-w-xl text-pretty text-3xl sm:text-4xl lg:text-5xl',
+        description: 'mt-2 text-md mx-auto max-w-2xl text-pretty sm:text-md text-muted'
+      }
+    },
+    pageSection: {
       slots: {
         root: 'relative isolate',
-        container: 'flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16',
+        container: 'flex flex-col lg:grid py-16 lg:py-24 lg:py-32 gap-8 lg:gap-16',
         wrapper: '',
         header: '',
         leading: 'flex items-center justify-center mb-6',
         leadingIcon: 'size-10 shrink-0 text-primary',
         headline: 'mb-3',
-        title: 'text-md sm:text-lg lg:text-xl tracking-tight font-bold text-highlighted uppercase',
-        description: 'text-base sm:text-lg text-muted',
+        title: 'text-md lg:text-lg lg:text-xl tracking-tight font-bold text-highlighted uppercase',
+        description: 'text-base lg:text-lg text-muted',
         body: 'mt-0',
         features: 'grid',
         footer: 'mt-4',
@@ -29,7 +36,7 @@ export default defineAppConfig({
             title: 'text-start',
             description: 'text-start text-balance',
             links: 'justify-start',
-            features: 'sm:grid-cols-2 lg:grid-cols-3 gap-8'
+            features: 'lg:grid-cols-2 lg:grid-cols-3 gap-8'
           }
         }
       }

@@ -1,0 +1,35 @@
+locale: en
+title: About Me
+description: Learn more about my journey as a fullstack engineer based in Paris, my approach to building reliable systems and how I think about modern web architecture.
+content: |
+  Hi, I'm **Jonathan Bessa**, a **fullstack JavaScript / PHP engineer based in Paris**.
+
+  Over the past few years, I've been building and operating web applications with a strong focus on **reliability**, **performance**, and **long-term maintainability**. My work goes beyond writing code — I design systems that are meant to run in production, evolve over time, and remain understandable for the teams working on them.
+
+  My journey started with **frontend development**, where I developed a strong attention to **user experience** and **interface quality**. Over time, I naturally moved towards **backend systems** and **infrastructure**, driven by a curiosity for how things work under the hood.
+
+  Today, I operate across the full stack with a **DevOps mindset**, connecting application logic, system design, and deployment workflows into cohesive and reliable architectures.
+
+  ### My Engineering Philosophy
+
+  My approach to engineering is rooted in **clarity**, **reliability**, and **ownership**.
+
+  I believe that good systems are not defined by their complexity, but by how easy they are to understand, maintain, and scale over time. I focus on designing architectures that remain **predictable in production** and **adaptable as requirements evolve**.
+
+  Rather than over-engineering, I prioritize **simple and robust solutions**, supported by strong fundamentals: **clean code**, clear boundaries, and solid observability.
+
+  Whether I'm working on frontend interfaces, backend services, or deployment pipelines, my goal is always the same: build systems that teams can **trust**.
+
+  ### What Drives Me
+
+  What keeps me engaged in this field is the challenge of turning **complex problems into reliable and maintainable systems**.
+
+  I enjoy working at the intersection of **development and operations**, where technical decisions have a direct impact on **performance**, **scalability**, and **team efficiency**.
+
+  Seeing a system run smoothly in production — handling real users, real constraints, and real scale — is what I find most rewarding.
+
+  ### Beyond Engineering
+
+  Outside of work, I'm constantly exploring ways to improve my understanding of **system design**, **performance**, and modern development practices.
+
+  I also value **structured thinking**, continuous learning, and building things with intention — whether in code or beyond.

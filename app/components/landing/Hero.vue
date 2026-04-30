@@ -23,11 +23,11 @@ const links = computed<ButtonProps[]>(() => [
 
 <template>
   <UPageHero :links="links" orientation="horizontal" reverse :ui="{
-    container: 'h-full lg:grid-cols-[2fr_1fr] lg:items-center',
-    wrapper: 'flex flex-col sm:justify-center',
-    title: 'text-center sm:text-start text-4xl',
-    headline: 'text-center sm:text-start m-0 ',
-    links: 'justify-center sm:justify-start',
+    container: 'h-full lg:grid-cols-[2fr_1fr] lg:items-center gap-2 md:gap-y-0 lg:gap-y-24',
+    wrapper: 'flex flex-col lg:justify-center lg:order-first',
+    title: 'text-center lg:text-start text-4xl',
+    headline: 'text-center lg:text-start m-0 ',
+    links: 'justify-center lg:justify-start',
   }">
     <template #title>
       <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
@@ -54,8 +54,8 @@ const links = computed<ButtonProps[]>(() => [
       <Motion :initial="{ opacity: 0, transform: 'translateY(15px)' }"
         :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ delay: 0.3, duration: 0.5 }"
         :in-view-options="{ once: true }">
-        <p class="text-pretty">{{ t('hero.tagline') }}</p>
-        <p class="text-pretty">{{ t('hero.role') }}</p>
+        <p class="text-pretty text-center lg:text-start">{{ t('hero.tagline') }}</p>
+        <p class="text-pretty text-center lg:text-start">{{ t('hero.role') }}</p>
       </Motion>
     </template>
     <template #links>
@@ -70,8 +70,9 @@ const links = computed<ButtonProps[]>(() => [
     </template>
     <Motion :initial="{ opacity: 0, transform: 'scale(0.95)' }" :while-in-view="{ opacity: 1, transform: 'scale(1)' }"
       :transition="{ delay: 0.4, duration: 0.6 }" :in-view-options="{ once: true }"
-      class="flex items-center justify-center sm:justify-end h-full">
-      <UColorModeImage width="300" height="300" class="rounded-md aspect-square object-cover"
+      class="flex items-center justify-center lg:justify-end">
+      <UColorModeImage width="300" height="300"
+        class="rounded-full w-1/2 h-1/2 md:w-1/3 md:h-1/3 lg:w-full lg:h-full lg:rounded-md aspect-square object-cover"
         light="/images/me-light.png" dark="/images/me-dark.jpg" />
     </Motion>
   </UPageHero>

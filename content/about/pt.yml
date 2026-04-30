@@ -1,0 +1,35 @@
+locale: pt
+title: Sobre mim
+description: Conhece a minha jornada como engenheiro fullstack baseado em Paris, a minha abordagem à construção de sistemas fiáveis e a forma como penso a arquitetura web moderna.
+content: |
+  Olá, sou **Jonathan Bessa**, um **engenheiro fullstack JavaScript / PHP baseado em Paris**.
+
+  Nos últimos anos, tenho trabalhado na criação e operação de aplicações web com um forte foco na **fiabilidade**, **performance** e **manutenibilidade a longo prazo**. O meu trabalho vai além de escrever código — concebo sistemas preparados para produção, capazes de evoluir ao longo do tempo e permanecer compreensíveis para as equipas que os mantêm.
+
+  O meu percurso começou no **desenvolvimento frontend**, onde desenvolvi uma forte atenção à **experiência do utilizador** e à **qualidade das interfaces**. Com o tempo, evoluí naturalmente para **sistemas backend** e **infraestrutura**, movido pela curiosidade de perceber como tudo funciona por baixo do capô.
+
+  Hoje, trabalho em toda a stack com uma mentalidade **DevOps**, ligando lógica de aplicação, design de sistemas e processos de deployment em arquiteturas coesas e fiáveis.
+
+  ### A minha filosofia de engenharia
+
+  A minha abordagem baseia-se em **clareza**, **fiabilidade** e **responsabilidade**.
+
+  Acredito que bons sistemas não são definidos pela sua complexidade, mas pela facilidade com que podem ser compreendidos, mantidos e escalados ao longo do tempo. Dou prioridade a arquiteturas **previsíveis em produção** e **adaptáveis à evolução dos requisitos**.
+
+  Em vez de sobre-engenharia, foco-me em soluções **simples e robustas**, suportadas por bases sólidas: **código limpo**, limites bem definidos e boa observabilidade.
+
+  Quer esteja a trabalhar em interfaces frontend, serviços backend ou pipelines de deploy, o meu objetivo é sempre o mesmo: construir sistemas em que as equipas possam **confiar**.
+
+  ### O que me motiva
+
+  O que me mantém motivado nesta área é o desafio de transformar **problemas complexos em sistemas fiáveis e fáceis de manter**.
+
+  Gosto de trabalhar na interseção entre **desenvolvimento e operações**, onde cada decisão técnica tem impacto direto na **performance**, **escalabilidade** e **eficiência das equipas**.
+
+  Ver um sistema funcionar em produção — a servir utilizadores reais, com restrições reais e escala real — é o que considero mais gratificante.
+
+  ### Para além da engenharia
+
+  Fora do trabalho, estou constantemente a explorar formas de melhorar a minha compreensão de **system design**, **performance** e práticas modernas de desenvolvimento.
+
+  Valorizo também o **pensamento estruturado**, a aprendizagem contínua e a construção com intenção — seja em código ou além dele.

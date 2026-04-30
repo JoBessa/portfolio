@@ -47,16 +47,16 @@ const experiences: Experience[] = [
         container: 'py-0 sm:py-0 lg:py-0'
     }">
         <UPageGrid :ui="{
-            base: 'lg:grid-cols-2'
+            base: 'grid-cols-1 md:grid-cols-1 lg:grid-cols-2 h-full'
         }">
             <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
                 :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ delay: 0.2, duration: 0.5 }"
                 :in-view-options="{ once: true }" class="w-full">
-                <p class="text-neutral font-bold text-xl mb-4 text-center sm:test-start">About Me</p>
-                <p class="text-muted text-balance">{{ t('home.aboutme.summary') }}</p>
+                <p class="text-neutral font-bold text-xl mb-4 test-start">About Me</p>
+                <p class="text-muted text-balance text-sm">{{ t('home.aboutme.summary') }}</p>
             </Motion>
-            <div class="w-full">
-                <p class="text-neutral font-bold text-xl mb-4 text-center sm:text-start">Work Experience</p>
+            <div class="w-full h-full">
+                <p class="text-neutral font-bold text-xl mb-4 text-start">Work Experience</p>
                 <div class="flex flex-col gap-4 text-neutral text-xs sm:text-sm">
                     <Motion v-for="(experience, index) in experiences" :key="index"
                         :initial="{ opacity: 0, transform: 'translateY(20px)' }"
@@ -69,11 +69,8 @@ const experiences: Experience[] = [
                         <USeparator />
                         <ULink class="flex items-center gap-1 cursor-pointer" :to="experience.link" target="_blank">
                             <span class="text-sm">
-                                <span class="sm:hidden">
+                                <span>
                                     {{ experience.role.short }}
-                                </span>
-                                <span class="hidden sm:inline">
-                                    {{ experience.role.full }}
                                 </span>
                                 &nbsp;{{ t('home.aboutme.at') }}&nbsp;
                             </span>

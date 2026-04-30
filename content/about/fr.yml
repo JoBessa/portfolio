@@ -1,0 +1,35 @@
+locale: fr
+title: À propos de moi
+description: Découvrez mon parcours en tant que ingénieur fullstack basé à Paris, mon approche de la création de systèmes fiables et ma vision de l'architecture web moderne.
+content: |
+  Bonjour, je suis **Jonathan Bessa**, un **ingénieur fullstack JavaScript / PHP basé à Paris**.
+
+  Ces dernières années, j'ai travaillé sur la création et l'exploitation d'applications web avec un fort accent sur la **fiabilité**, la **performance** et la **maintenabilité à long terme**. Mon travail va au-delà de l'écriture de code — je conçois des systèmes destinés à fonctionner en production, à évoluer dans le temps et à rester compréhensibles pour les équipes qui les maintiennent.
+
+  Mon parcours a commencé avec le **développement frontend**, où j'ai développé une forte sensibilité à l'**expérience utilisateur** et à la **qualité des interfaces**. Progressivement, je me suis orienté vers les **systèmes backend** et l'**infrastructure**, guidé par une curiosité pour le fonctionnement des systèmes en profondeur.
+
+  Aujourd'hui, j'évolue sur toute la stack avec une approche **DevOps**, en reliant la logique applicative, la conception système et les workflows de déploiement dans des architectures cohérentes et fiables.
+
+  ### Ma philosophie d'ingénierie
+
+  Mon approche repose sur la **clarté**, la **fiabilité** et la **responsabilité**.
+
+  Je pense que les bons systèmes ne se définissent pas par leur complexité, mais par leur facilité de compréhension, de maintenance et d'évolution. Je privilégie des architectures **prévisibles en production** et **adaptables aux besoins futurs**.
+
+  Plutôt que de sur-architecturer, je privilégie des solutions **simples et robustes**, basées sur des fondamentaux solides : **code propre**, frontières claires et bonne observabilité.
+
+  Que je travaille sur des interfaces frontend, des services backend ou des pipelines de déploiement, mon objectif reste le même : construire des systèmes auxquels les équipes peuvent **faire confiance**.
+
+  ### Ce qui me motive
+
+  Ce qui me passionne dans ce métier, c'est de transformer des **problèmes complexes en systèmes fiables et maintenables**.
+
+  J'aime évoluer à l'intersection du **développement et de l'opérationnel**, où chaque décision technique impacte directement la **performance**, la **scalabilité** et l'**efficacité des équipes**.
+
+  Voir un système fonctionner en production — gérer de vrais utilisateurs, de vraies contraintes et de vraies charges — est ce qui me motive le plus.
+
+  ### Au-delà de l'ingénierie
+
+  En dehors du travail, j'explore constamment des moyens d'améliorer ma compréhension du **design de systèmes**, de la **performance** et des pratiques modernes de développement.
+
+  J'accorde aussi beaucoup d'importance à la **pensée structurée**, à l'apprentissage continu et à la construction intentionnelle — que ce soit dans le code ou au-delà.

@@ -7,7 +7,8 @@ interface PhilosophyStat {
     title: string
     description: string
     icon: string,
-    labels: string[]
+    labels: string[],
+    class?: string
 }
 
 const stats = computed<PhilosophyStat[]>(() => [
@@ -15,22 +16,25 @@ const stats = computed<PhilosophyStat[]>(() => [
         id: "01",
         title: t('home.philosophy.visibility.title'),
         description: t('home.philosophy.visibility.description'),
-        icon: 'lucide:activity', // monitoring / signals / observability
-        labels: ['Datadog', 'Logging', 'Metrics', 'Alerting']
+        icon: 'lucide:activity',
+        labels: ['Datadog', 'Logging', 'Metrics', 'Alerting'],
+        class: "col-span-1"
     },
     {
         id: '02',
         title: t('home.philosophy.reproduce.title'),
         description: t('home.philosophy.reproduce.description'),
-        icon: 'lucide:layers', // infra as code / layered systems
-        labels: ['Terraform', 'Docker', 'CI/CD', 'AWS', 'GitOps']
+        icon: 'lucide:layers',
+        labels: ['Terraform', 'Docker', 'CI/CD', 'AWS', 'GitOps'],
+        class: "col-span-1"
     },
     {
         id: '03',
         title: t('home.philosophy.scalable.title'),
         description: t('home.philosophy.scalable.description'),
-        icon: 'lucide:gauge', // performance / speed / scaling
-        labels: ['Node.js', 'Nuxt', 'PostgreSQL', 'Redis', 'DX']
+        icon: 'lucide:gauge',
+        labels: ['Node.js', 'Nuxt', 'PostgreSQL', 'Redis', 'DX'],
+        class: "col-span-1 md:col-span-2"
     }
 ])
 </script>
@@ -38,25 +42,21 @@ const stats = computed<PhilosophyStat[]>(() => [
 <template>
     <UPageSection :description="t('home.philosophy.description')">
         <template #title>
-            <Motion
-                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ duration: 0.5 }"
-                :in-view-options="{ once: true }"
-            >
+            <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ duration: 0.5 }"
+                :in-view-options="{ once: true }">
                 {{ t('home.philosophy.title') }}
             </Motion>
         </template>
-        <UPageGrid>
+        <UPageGrid class="grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
             <Motion v-for="(stat, index) in stats" :key="stat.id"
                 :initial="{ opacity: 0, transform: 'translateY(20px)' }"
                 :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ delay: 0.2 + 0.15 * index, duration: 0.5 }"
-                :in-view-options="{ once: true }"
-            >
-                <UPageCard class="overflow-hidden" variant="subtle"
-                    :highlight="stat.id == '01' || stat.id == '03'">
-                    <div class="text-7xl font-bold text-muted flex justify-between">
+                :transition="{ delay: 0.2 + 0.15 * index, duration: 0.5 }" :in-view-options="{ once: true }"
+                :class="stat.class">
+                <UPageCard class="overflow-hidden h-full" variant="subtle"
+                    :class="(index === 2) ? 'ring-2 ring-primary' : ''">
+                    <div class=" text-7xl font-bold text-muted flex justify-between">
                         <p>{{ stat.id }}</p>
                         <UIcon :name="stat.icon" class="size-8 text-primary item-center my-auto" />
                     </div>

@@ -100,7 +100,7 @@ const { data: project } = await useAsyncData(
                     :initial="{ opacity: 0, transform: 'translateY(20px)' }"
                     :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
                     :transition="{ delay: 0.15 + 0.1 * index, duration: 0.5 }" :in-view-options="{ once: true }">
-                    <UPageCard variant="subtle" class="text-center">
+                    <UPageCard variant="subtle" class="text-center h-full">
                         <div class="text-3xl font-black tracking-tight text-primary">
                             {{ stat.value }}
                         </div>

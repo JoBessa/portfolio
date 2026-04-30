@@ -7,10 +7,10 @@ defineProps<{
 </script>
 
 <template>
-  <div class="fixed top-2 sm:top-4 mx-auto left-1/2 -translate-x-1/2 z-10">
+  <div class="fixed top-2 sm:top-4 mx-auto left-1/2 -translate-x-1/2 z-10 w-dvw flex justify-center">
     <div class="flex items-center bg-muted/80 backdrop-blur-sm rounded-md px-3 py-1 shadow-lg shadow-neutral-950/5">
-      <ULink to="/" class="p-0 sm:mr-8">
-        <UColorModeImage light="/images/signature-light.png" dark="/images/signature-dark.png" class="h-8" />
+      <ULink to="/" class="hidden md:flex">
+        <UColorModeImage light="/images/signature-light.png" dark="/images/signature-dark.png" class="h-8 mr-4" />
       </ULink>
       <UNavigationMenu :items="links" variant="link" color="primary"
         :ui="{ link: 'px-2 py-1', linkLeadingIcon: 'hidden' }" highlight highlight-color="primary" />

@@ -1,27 +1,23 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const links = {
-    email: 'mailto:jonathan@email.com',
-    projects: '/projects',
-    linkedin: 'https://www.linkedin.com/in/ton-profil',
-    github: 'https://github.com/ton-profil'
-}
 </script>
 
 <template>
-    <UPageSection>
+    <UPageSection :ui="{
+        container: 'pb-4 sm:pb-4 lg:pb-8 pt-6 sm:pt-12 lg:pt-18'
+    }">
         <UPageCard class="overflow-hidden" variant="naked">
-            <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div class="flex flex-col gap-8">
                 <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
                     :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
                     :transition="{ delay: 0.2, duration: 0.5 }" :in-view-options="{ once: true }" class="max-w-2xl">
                     <UBadge :label="t('home.contact.eyebrow')" color="neutral" variant="subtle" class="mb-4" />
 
-                    <h2 class="text-3xl font-semibold tracking-tight text-(--ui-text-highlighted) sm:text-4xl">
+                    <h2 class="text-2xl font-semibold tracking-tight text-(--ui-text-highlighted) sm:text-2xl">
                         {{ t('home.contact.title') }}
                     </h2>
 
-                    <p class="mt-4 text-base leading-7 text-(--ui-text-muted) sm:text-lg">
+                    <p class="mt-4 text-sm text-(--ui-text-muted)">
                         {{ t('home.contact.description') }}
                     </p>
 
@@ -31,20 +27,6 @@ const links = {
                         <UBadge :label="t('home.contact.hybrid')" color="neutral" variant="subtle" />
                         <UBadge :label="t('home.contact.status')" color="neutral" variant="subtle" />
                     </div>
-                </Motion>
-
-                <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                    :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                    :transition="{ delay: 0.4, duration: 0.5 }" :in-view-options="{ once: true }"
-                    class="flex justify-center sm:justify-start flex-row gap-3 w-auto">
-                    <UButton :to="links.email" icon="i-lucide-mail" size="lg">
-                        {{ t('home.contact.cta') }}
-                    </UButton>
-
-                    <UButton :to="links.projects" color="neutral" variant="subtle" trailing-icon="i-lucide-arrow-right"
-                        size="lg">
-                        {{ t('projects.button') }}
-                    </UButton>
                 </Motion>
             </div>
         </UPageCard>

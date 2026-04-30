@@ -25,8 +25,7 @@ const cards = computed<ArsenalCard[]>(() => [
             { name: 'simple-icons:laravel', label: 'Laravel' },
             { name: 'simple-icons:trpc', label: 'tRPC' },
             { name: 'simple-icons:openapiinitiative', label: 'API Design' }
-        ],
-        class: 'lg:col-span-2',
+        ]
     },
     {
         title: t('home.arsenal.backend.title'),
@@ -38,8 +37,7 @@ const cards = computed<ArsenalCard[]>(() => [
             { name: 'simple-icons:rabbitmq', label: 'Queues / RabbitMQ' },
             { name: 'simple-icons:graphql', label: 'GraphQL' },
             { name: 'lucide:database', label: 'SQL Optimization' }
-        ],
-        class: 'lg:col-span-2',
+        ]
     },
     {
         title: t('home.arsenal.cloud.title'),
@@ -52,7 +50,7 @@ const cards = computed<ArsenalCard[]>(() => [
             { name: 'simple-icons:amazons3', label: 'S3' },
             { name: 'lucide:network', label: 'Networking' }
         ],
-        class: 'lg:col-span-2',
+        class: 'md:col-span-2'
     },
     {
         title: t('home.arsenal.cicd.title'),
@@ -64,8 +62,7 @@ const cards = computed<ArsenalCard[]>(() => [
             { name: 'lucide:workflow', label: 'Pipelines' },
             { name: 'simple-icons:vitest', label: 'Testing' },
             { name: 'lucide:cpu', label: 'Automation' }
-        ],
-        class: 'lg:col-span-3',
+        ]
     },
     {
         title: t('home.arsenal.performance.title'),
@@ -77,8 +74,7 @@ const cards = computed<ArsenalCard[]>(() => [
             { name: 'lucide:search', label: 'Debugging' },
             { name: 'lucide:zap', label: 'Performance' },
             { name: 'lucide:shield-check', label: 'Reliability' }
-        ],
-        class: 'lg:col-span-3',
+        ]
     }
 ])
 </script>
@@ -88,29 +84,26 @@ const cards = computed<ArsenalCard[]>(() => [
         container: 'py-0 sm:py-0 lg:py-0'
     }">
         <template #title>
-            <Motion
-                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ duration: 0.5 }"
-                :in-view-options="{ once: true }"
-            >
+            <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ duration: 0.5 }"
+                :in-view-options="{ once: true }">
                 {{ t('home.arsenal.title') }}
             </Motion>
         </template>
         <UPageGrid :ui="{
-            base: 'relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4'
+            base: 'relative grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'
         }">
             <Motion v-for="(card, index) in cards" :key="index" :class="card.class"
                 :initial="{ opacity: 0, transform: 'translateY(20px)' }"
                 :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ delay: 0.15 + 0.1 * index, duration: 0.5 }"
-                :in-view-options="{ once: true }"
-            >
-                <UPageCard :title="card.title" variant="subtle" :description="card.description" class="h-full">
+                :transition="{ delay: 0.15 + 0.1 * index, duration: 0.5 }" :in-view-options="{ once: true }">
+                <UPageCard :title="card.title" variant="subtle" :description="card.description" class="h-full"
+                    :class="index === 2 ? 'ring-0 md:ring-2 lg:ring-0 ring-primary' : ''">
                     <template #footer>
                         <div class="flex items-center gap-3">
-                            <UTooltip v-for="tech in card.techs" :key="tech.name" :text="tech.label" class="cursor-pointer">
-                                <UBadge color="primary">
+                            <UTooltip v-for="tech in card.techs" :key="tech.name" :text="tech.label"
+                                class="cursor-pointer">
+                                <UBadge color="primary" class="p-1">
                                     <UIcon :name="tech.name" class="size-6" />
                                 </UBadge>
                             </UTooltip>

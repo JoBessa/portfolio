@@ -6,10 +6,10 @@
     "contact": "Contact",
     "darkMode": "Mode sombre",
     "lightMode": "Mode clair",
-    "downloadCv": "Télécharger le CV",
+    "downloadCv": "Télécharger CV",
     "language": "Langue",
-    "switchToDark": "Passer en mode sombre",
-    "switchToLight": "Passer en mode clair",
+    "switchToDark": "Passer au mode sombre",
+    "switchToLight": "Passer au mode clair",
     "menu": "Menu",
     "lang": {
       "en": "Anglais",
@@ -19,21 +19,23 @@
   },
   "projects": {
     "title": "Projets",
-    "description": "Une sélection de projets fullstack et DevOps reflétant mon approche de l’architecture, de l’automatisation et du déploiement.",
+    "description": "Une sélection de projets fullstack et DevOps reflétant mon approche de l'architecture, de l'automatisation et du déploiement.",
     "cta": "Voir sur GitHub",
-    "demo": "Démo en ligne",
+    "demo": "Démo live",
     "all": "Tous les projets",
-    "featured_label": "Mis en avant",
-    "button": "Voir les projets"
+    "featured_label": "À la une",
+    "button": "Voir les projets",
+    "title_page": "Bâtir des systèmes fullstack fiables avec une culture DevOps.",
+    "description_page": "Je conçois et développe des applications web scalables, des interfaces frontend aux architectures backend et pipelines de déploiement. Je me concentre sur l'ingénierie propre, la performance et la maintenabilité sur l'ensemble de la stack."
   },
   "seo": {
     "home": {
       "title": "Développeur Fullstack JS/PHP & DevOps",
-      "description": "Portfolio de Jonathan Bessa, développeur fullstack JS/PHP avec expertise DevOps, orienté applications fiables, performantes et maintenables."
+      "description": "Portfolio de Jonathan Bessa, développeur fullstack JS/PHP avec expertise DevOps, axé sur des applications fiables, performantes et maintenables."
     },
     "projects": {
       "title": "Projets",
-      "description": "Sélection de projets fullstack et DevOps couvrant le développement produit, l’architecture, l’automatisation et le déploiement."
+      "description": "Sélection de projets fullstack et DevOps couvrant le développement de produits, l'architecture, l'automatisation et le déploiement."
     },
     "about": {
       "title": "À propos",
@@ -47,31 +49,31 @@
   "hero": {
     "greeting": "Fullstack JS/PHP · DevOps",
     "name": "Jonathan Bessa",
-    "role": "Développeur fullstack JavaScript / PHP avec une forte culture DevOps",
-    "tagline": "Je conçois et développe des applications web scalables, en mettant l’accent sur la performance, la fiabilité et la qualité de l’architecture.",
-    "available_badge": "Ouvert aux opportunités",
+    "role": "Fullstack JavaScript / PHP avec une forte culture DevOps.",
+    "tagline": "Je conçois et réalise des applications web scalables, en mettant l'accent sur la performance, la fiabilité et une architecture propre.",
+    "available_badge": "Ouvert à de nouvelles opportunités",
     "download_resume": "Télécharger le CV"
   },
   "home": {
     "intro": {
       "eyebrow": "Positionnement",
-      "title": "Du produit à l’infrastructure",
-      "description_1": "J’interviens sur toute la chaîne de valeur d’un projet web : interface, logique métier, backend, déploiement, qualité et fiabilité.",
-      "description_2": "Mon objectif est de construire des produits utiles avec des bases solides et suffisamment robustes pour évoluer dans le temps."
+      "title": "Du produit à l'infrastructure",
+      "description_1": "J'interviens sur toute la chaîne de valeur d'un projet web : interface, logique métier, backend, déploiement, qualité et fiabilité.",
+      "description_2": "Mon objectif est de bâtir des produits utiles avec des bases saines et assez de robustesse pour évoluer dans le temps."
     },
     "focus": {
-      "title": "Ce que j’apporte",
+      "title": "Ce que j'apporte",
       "items": [
-        "Développement d’applications fullstack en JavaScript et PHP",
+        "Développement d'applications fullstack en JavaScript et PHP",
         "Bases solides en architecture frontend et backend",
-        "Industrialisation des déploiements et des environnements",
-        "Forte attention à la performance, la maintenabilité et la clarté"
+        "Industrialisation du déploiement et des environnements",
+        "Une attention particulière à la performance, la maintenabilité et la clarté"
       ]
     },
     "featured": {
       "eyebrow": "Sélection",
-      "title": "Projets mis en avant",
-      "description": "Quelques projets représentatifs de mon approche fullstack et DevOps.",
+      "title": "Projets phares",
+      "description": "Quelques projets représentatifs soulignant mon approche fullstack et DevOps.",
       "cta": "Tous les projets",
       "view_project": "Voir le projet"
     },
@@ -79,89 +81,89 @@
       "items": [
         {
           "title": "Clarté",
-          "description": "Des interfaces simples, une architecture lisible et des choix techniques cohérents."
+          "description": "Des interfaces simples, une architecture lisible et des choix techniques qui font sens."
         },
         {
           "title": "Fiabilité",
-          "description": "Des solutions conçues pour durer, maintenables et correctement déployées."
+          "description": "Des solutions conçues pour durer, rester maintenables et être déployées proprement."
         },
         {
           "title": "Impact",
-          "description": "Des projets conçus pour résoudre de vrais problèmes, pas uniquement démontrer de la technologie."
+          "description": "Des projets construits pour résoudre de vrais problèmes, pas seulement pour la démonstration technique."
         }
       ]
     },
     "impact": {
-      "title": "Impact mesurable",
+      "title": "Impact Mesurable",
       "SLA": {
-        "title": "SLA moyen sur les services en production",
-        "description": "Systèmes à haute disponibilité maintenus"
+        "title": "SLA moyen sur les services de production",
+        "description": "Systèmes haute disponibilité maintenus"
       },
       "IaC": {
-        "title": "Optimisation des coûts d’infrastructure cloud",
-        "description": "Optimisation coûts & performance AWS"
+        "title": "Optimisation des coûts d'architecture Cloud",
+        "description": "Optimisation des coûts et performances AWS"
       },
       "CI/CD": {
         "title": "Déploiements CI/CD entièrement automatisés",
         "description": "Du commit à la production"
       },
       "experience": {
-        "title": "Années d’expérience sur des systèmes en production",
+        "title": "Années d'expérience sur systèmes de production",
         "description": "Responsabilité Fullstack & DevOps"
       }
     },
     "philosophy": {
-      "title": "Philosophie d’ingénierie",
-      "description": "Ma façon de concevoir les systèmes.",
+      "title": "Philosophie d'Ingénierie",
+      "description": "Ma vision des systèmes.",
       "visibility": {
         "title": "Visibilité & Fiabilité",
-        "description": "On ne peut pas corriger ce que l’on ne voit pas. Je construis des systèmes observables avec logs, métriques et monitoring pour garantir la fiabilité en production."
+        "description": "On ne peut pas réparer ce qu'on ne voit pas. Je construis des systèmes observables avec logs, métriques et monitoring pour garantir la fiabilité en production."
       },
       "reproduce": {
-        "title": "Systèmes reproductibles",
-        "description": "Les infrastructures et environnements doivent être cohérents. J’utilise l’automatisation et l’IaC pour éliminer les dérives et réduire les erreurs humaines."
+        "title": "Systèmes Reproductibles",
+        "description": "L'infrastructure et les environnements doivent être cohérents. J'utilise l'automatisation et l'IaC pour éliminer les dérives et réduire l'erreur humaine."
       },
       "scalable": {
-        "title": "Scalable par conception",
-        "description": "Performance et expérience développeur vont de pair. Je conçois des systèmes qui passent à l’échelle tout en restant simples à construire, tester et maintenir."
+        "title": "Scalable par Design",
+        "description": "La performance et l'expérience développeur vont de pair. Je conçois des systèmes qui passent à l'échelle tout en restant simples à construire, tester et maintenir."
       }
     },
     "arsenal": {
-      "title": "Stack technique",
-      "description": "Mes compétences et outils",
+      "title": "Arsenal Technique",
+      "description": "Mes compétences techniques et outils",
       "fullstack": {
         "title": "Architecture Fullstack",
-        "description": "Conception et développement d’applications de bout en bout avec un fort accent sur la maintenabilité et la performance."
+        "description": "Conception et construction d'applications de bout en bout, du frontend au backend, avec un accent sur la maintenabilité."
       },
       "backend": {
-        "title": "Backend & Data",
-        "description": "Création d’APIs robustes et de couches de données efficaces avec stratégies de cache et bases de données scalables."
+        "title": "Backend & Systèmes de Données",
+        "description": "Construction d'APIs robustes et de couches de données avec requêtes efficaces et stratégies de cache."
       },
       "cloud": {
         "title": "Cloud & Infrastructure",
-        "description": "Déploiement et exploitation de systèmes en production avec des architectures cloud scalables, résilientes et optimisées en coût."
+        "description": "Déploiement et exploitation de systèmes de production avec des architectures cloud résilientes et optimisées."
       },
       "cicd": {
         "title": "CI/CD & Automatisation",
-        "description": "Automatisation des pipelines pour des déploiements rapides, fiables et reproductibles."
+        "description": "Automatisation des pipelines de livraison pour garantir des déploiements rapides, fiables et répétables."
       },
       "performance": {
         "title": "Performance & Fiabilité",
-        "description": "Optimisation des systèmes en termes de rapidité et disponibilité grâce au monitoring et au tuning proactif."
+        "description": "Optimisation des systèmes pour la vitesse et la disponibilité avec monitoring et tuning proactif."
       }
     },
     "projects": {
       "title": "Projets",
-      "description": "Une sélection de projets fullstack et DevOps.",
+      "description": "Une sélection de projets fullstack et DevOps reflétant mon approche de l'architecture et de l'automatisation.",
       "viewAll": "Voir tous les projets",
-      "readMore": "En savoir plus",
-      "liveDemo": "Démo"
+      "readMore": "Lire la suite",
+      "liveDemo": "Démo live"
     },
     "aboutme": {
       "title": "Expériences",
-      "summary": "Développeur fullstack et consultant expérimenté, je conçois des applications web scalables avec Nuxt, Next.js, Laravel et Symfony. Je combine rigueur technique, expertise cloud (AWS) et vision produit pour transformer des besoins complexes en solutions fiables et maintenables, avec un intérêt particulier pour des opportunités long terme (CDI).",
-      "workExp": "Expérience professionnelle",
-      "present": "Aujourd’hui",
+      "summary": "Développeur full-stack et consultant expérimenté dans la création d'applications web scalables (Nuxt, Next.js, Laravel, Symfony), je conçois des produits numériques robustes et centrés sur l'utilisateur. J'allie discipline d'ingénierie, expertise cloud (AWS) et vision produit pour transformer des besoins complexes en solutions fiables, avec un focus sur les opportunités à long terme (CDI).",
+      "workExp": "Expérience Professionnelle",
+      "present": "Présent",
       "at": "chez",
       "seniorDev": {
         "full": "Fullstack & DevOps",
@@ -169,21 +171,80 @@
       },
       "juniorDev": {
         "full": "Développeur Fullstack Junior",
-        "short": "Junior"
+        "short": "Dév Junior"
       },
       "apprenticeDev": {
-        "full": "Développeur Fullstack en alternance",
-        "short": "Alternant"
+        "full": "Développeur Fullstack en Apprentissage",
+        "short": "Apprenti"
       }
     },
     "contact": {
       "eyebrow": "Ouvert aux opportunités en CDI",
-      "title": "Construisons des produits web fiables ensemble.",
-      "description": "Développeur Fullstack et ingénieur DevOps basé à Paris, actuellement ouvert à un poste en CDI. Je développe des applications modernes, scalables et maintenables, de l’interface frontend jusqu’au déploiement.",
+      "title": "Bâtissons ensemble des produits web fiables.",
+      "description": "Je suis développeur Web Full-Stack et ingénieur DevOps basé à Paris, actuellement à la recherche d'un poste en CDI. Je construis des applications modernes et scalables, des interfaces aux workflows de déploiement.",
       "cta": "Me contacter",
-      "fulltime": "CDI",
-      "hybrid": "Hybride / Présentiel",
-      "status": "Fullstack + DevOps"
+      "fulltime": "CDI Temps plein",
+      "hybrid": "Hybride / Sur site",
+      "status": "Full-stack + DevOps"
+    }
+  },
+  "contact": {
+    "seo": {
+      "title": "Contact"
+    },
+    "hero": {
+      "title_1": "Travaillons",
+      "title_2": "ensemble.",
+      "description": "Une opportunité, un projet freelance, ou simplement envie d'échanger ?\nJe suis disponible et ouvert à la discussion."
+    },
+    "cards": {
+      "direct": {
+        "title": "Contact direct",
+        "description": "Le moyen le plus rapide de me joindre."
+      },
+      "availability": {
+        "title": "Disponibilité",
+        "status": "Ouvert",
+        "description": "Contrat CDI Fullstack avec dimension DevOps"
+      },
+      "socials": {
+        "title": "Réseaux"
+      }
+    },
+    "form": {
+      "header": {
+        "title": "Envoyer un message",
+        "description": "Je réponds généralement sous 24 heures."
+      },
+      "fields": {
+        "name": {
+          "label": "Nom"
+        },
+        "email": {
+          "label": "Email"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Décrivez votre projet, opportunité ou question..."
+        }
+      },
+      "footer": {
+        "privacy": "Vos données ne sont jamais partagées."
+      },
+      "buttons": {
+        "submit": "Envoyer",
+        "sent": "Envoyé !"
+      }
+    },
+    "toast": {
+      "success": {
+        "title": "Message envoyé !",
+        "description": "Je reviendrai vers vous dès que possible."
+      },
+      "error": {
+        "title": "Erreur",
+        "description": "L'envoi a échoué. Veuillez réessayer ou me contacter directement."
+      }
     }
   }
 }

@@ -13,7 +13,7 @@ const { data: projects } = await useAsyncData(
 
 <template>
     <UPageSection>
-        <div v-if="projects?.length" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div v-if="projects?.length" class="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <Motion v-for="(project, index) in projects" :key="project.path"
                 :initial="{ opacity: 0, transform: 'translateY(20px)' }"
                 :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"

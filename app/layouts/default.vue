@@ -9,7 +9,7 @@ const navLinks = computed<NavigationMenuItem[]>(() => [
     label: t('nav.home'),
     icon: 'i-lucide-home',
     to: '/',
-    class: 'sm:hidden'
+    class: 'md:hidden'
   },
   {
     label: t('nav.projects'),
@@ -18,18 +18,18 @@ const navLinks = computed<NavigationMenuItem[]>(() => [
   }, {
     label: t('nav.about'),
     icon: 'i-lucide-file-text',
-    to: '#about'
+    to: '/about'
   },
   {
     label: t('nav.contact'),
     icon: 'i-lucide-user',
-    to: '#contact'
+    to: '/contact'
   }])
 </script>
 
 <template>
   <div>
-    <UContainer class="sm:border-x border-default">
+    <UContainer class="sm:border-x border-default px-48">
       <AppHeader :links="navLinks" />
       <slot />
       <AppFooter />

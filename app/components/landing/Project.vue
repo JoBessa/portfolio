@@ -20,29 +20,28 @@ const { data: projects } = await useAsyncData(
         variant: 'outline',
         trailingIcon: 'i-lucide-arrow-right',
         size: 'sm'
-    }]">
+    }]" :ui="{
+        container: 'sm:gap-0 lg:gap-8 py-6 sm:py-12 lg:py-18'
+    }">
         <template #title>
-            <Motion
-                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ duration: 0.5 }"
-                :in-view-options="{ once: true }"
-            >
+            <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ duration: 0.5 }"
+                :in-view-options="{ once: true }">
                 {{ t('projects.title') }}
             </Motion>
         </template>
-        <div v-if="projects?.length" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div v-if="projects?.length" class="grid grid-cols-1 gap-6">
             <Motion v-for="(project, index) in projects" :key="project.path"
                 :initial="{ opacity: 0, transform: 'translateY(20px)' }"
                 :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ delay: 0.2 + 0.15 * index, duration: 0.5 }"
-                :in-view-options="{ once: true }"
-            >
-                <UCard variant="soft" class="group overflow-hidden p-0 h-full" :ui="{
-                    body: 'sm:p-0',
+                :transition="{ delay: 0.2 + 0.15 * index, duration: 0.5 }" :in-view-options="{ once: true }">
+                <UPageCard variant="soft" class="group overflow-hidden p-0 h-full" :ui="{
+                    root: 'md:bg-transparent md:ring-0',
+                    container: 'sm:p-0 p-0 md:grid md:grid-cols-2 md:items-center'
                 }">
                     <!-- Image -->
-                    <div class="relative overflow-hidden aspect-video bg-muted">
+                    <div class="relative overflow-hidden aspect-video bg-muted"
+                        :class="index % 2 === 0 ? 'md:order-1' : 'md:order-2'">
                         <NuxtImg v-if="project.image" :src="project.image" :alt="project.title"
                             class="object-cover w-full h-full" />
                         <div v-else class="w-full h-full flex items-center justify-center">
@@ -51,7 +50,7 @@ const { data: projects } = await useAsyncData(
                     </div>
 
                     <!-- Content -->
-                    <div class="p-5 flex flex-col gap-4">
+                    <div class="p-5 flex flex-col gap-4" :class="index % 2 === 0 ? 'md:order-2' : 'md:order-1'">
                         <!-- Title + description -->
                         <div class="flex flex-col gap-1.5">
                             <h3 class="font-semibold text-base text-highlighted leading-snug">
@@ -73,7 +72,7 @@ const { data: projects } = await useAsyncData(
 
                         <!-- Links -->
                         <div class="flex items-center justify-between gap-4">
-                            <UButton v-if="project.slug" :to="'projects/' + project.slug" target="_blank" variant="subtle">
+                            <UButton v-if="project.slug" :to="'projects/' + project.slug" variant="subtle">
                                 {{ t('home.projects.readMore') }}
                             </UButton>
                             <UButton v-if="project.demo" :to="project.demo" target="_blank" variant="link">
@@ -81,7 +80,7 @@ const { data: projects } = await useAsyncData(
                             </UButton>
                         </div>
                     </div>
-                </UCard>
+                </UPageCard>
             </Motion>
         </div>
 
