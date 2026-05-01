@@ -53,9 +53,6 @@ importers:
       nuxt-og-image:
         specifier: ^6.4.4
         version: 6.4.4(7284af43c1b51c44196abaf67133da98)
-      nuxt-turnstile:
-        specifier: ^0.1.1
-        version: 0.1.1(magicast@0.5.2)
       tailwindcss:
         specifier: ^4.2.2
         version: 4.2.2
@@ -5396,10 +5393,6 @@ packages:
 
   nuxt-site-config@4.0.8:
     resolution: {integrity: sha512-H7wHoOJ5Z6ZnTqD5vUugaKkWZbejZ9kGmzpr2dheOaC6RdT8JafCfMrmJG7W+cyJiJJ3YmzL+bzPBW2bW6MExA==}
-
-  nuxt-turnstile@0.1.1:
-    resolution: {integrity: sha512-ptPZ4zOqvFG+xCVufOJg/O+P3jRIMCCzPTCeoNwjnsHy3FSZDsEDoeCMY9hitmXHioR8Pyg2mc1HtzXG/v1MbA==}
-    deprecated: This package has moved to @nuxtjs/turnstile.
 
   nuxt@4.4.2:
     resolution: {integrity: sha512-iWVFpr/YEqVU/CenqIHMnIkvb2HE/9f+q8oxZ+pj2et+60NljGRClCgnmbvGPdmNFE0F1bEhoBCYfqbDOCim3Q==}
@@ -12841,14 +12834,6 @@ snapshots:
       - vite
       - vue
       - zod
-
-  nuxt-turnstile@0.1.1(magicast@0.5.2):
-    dependencies:
-      '@nuxt/kit': 3.21.2(magicast@0.5.2)
-      defu: 6.1.7
-      pathe: 1.1.2
-    transitivePeerDependencies:
-      - magicast
 
   nuxt@4.4.2(@babel/core@7.29.0)(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@parcel/watcher@2.5.6)(@types/node@25.5.0)(@vue/compiler-sfc@3.5.32)(better-sqlite3@12.9.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.9.0))(eslint@10.2.0(jiti@2.6.1))(ioredis@5.10.0)(lightningcss@1.32.0)(magicast@0.5.2)(optionator@0.9.4)(rollup-plugin-visualizer@6.0.11(rollup@4.59.0))(rollup@4.59.0)(terser@5.46.1)(typescript@6.0.2)(vite@7.3.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.1)(yaml@2.8.2))(vue-tsc@3.2.6(typescript@6.0.2))(yaml@2.8.2):
     dependencies:
