@@ -190,62 +190,45 @@
     }
   },
   "contact": {
-    "seo": {
-      "title": "Contact"
-    },
+    "seo_title": "Contact",
     "hero": {
-      "title_1": "Travaillons",
-      "title_2": "ensemble.",
-      "description": "Une opportunité, un projet freelance, ou simplement envie d'échanger ?\nJe suis disponible et ouvert à la discussion."
+      "title_line1": "Travaillons",
+      "title_line2": "ensemble.",
+      "description": "Une opportunité, un projet freelance, ou simplement envie d'échanger ? Je suis disponible et ouvert à la discussion."
     },
     "cards": {
-      "direct": {
-        "title": "Contact direct",
-        "description": "Le moyen le plus rapide de me joindre."
-      },
-      "availability": {
-        "title": "Disponibilité",
-        "status": "Ouvert",
-        "description": "Contrat CDI Fullstack avec dimension DevOps"
-      },
-      "socials": {
-        "title": "Réseaux"
-      }
+      "direct_title": "Contact direct",
+      "direct_desc": "Le moyen le plus rapide de me joindre.",
+      "availability_title": "Disponibilité",
+      "availability_status": "Ouvert",
+      "availability_desc_line1": "CDI fullstack avec dimension DevOps.",
+      "availability_desc_line2": "Reims · Paris · Remote.",
+      "socials_title": "Réseaux"
     },
     "form": {
-      "header": {
-        "title": "Envoyer un message",
-        "description": "Je réponds généralement sous 24 heures."
-      },
-      "fields": {
-        "name": {
-          "label": "Nom"
-        },
-        "email": {
-          "label": "Email"
-        },
-        "message": {
-          "label": "Message",
-          "placeholder": "Décrivez votre projet, opportunité ou question..."
-        }
-      },
-      "footer": {
-        "privacy": "Vos données ne sont jamais partagées."
-      },
-      "buttons": {
-        "submit": "Envoyer",
-        "sent": "Envoyé !"
-      }
+      "header_title": "Envoyer un message",
+      "header_subtitle": "Je réponds généralement sous 24h.",
+      "label_name": "Votre nom",
+      "placeholder_name": "Alice Dupont",
+      "label_email": "Email professionnel",
+      "label_company": "Entreprise",
+      "placeholder_company": "Acme Corp",
+      "label_contract": "Type de contrat",
+      "contract_freelance": "Freelance",
+      "contract_internship": "Stage",
+      "placeholder_select": "Sélectionner…",
+      "warning_cdi": "Je recherche exclusivement un CDI.",
+      "label_message": "Message",
+      "placeholder_message": "Décrivez le poste, le contexte de l'équipe, les technos utilisées…",
+      "privacy_note": "Vos données ne sont jamais partagées.",
+      "btn_send": "Envoyer",
+      "btn_sent": "Envoyé !"
     },
-    "toast": {
-      "success": {
-        "title": "Message envoyé !",
-        "description": "Je reviendrai vers vous dès que possible."
-      },
-      "error": {
-        "title": "Erreur",
-        "description": "L'envoi a échoué. Veuillez réessayer ou me contacter directement."
-      }
+    "notifications": {
+      "success_title": "Message envoyé !",
+      "success_desc": "Je vous répondrai dans les plus brefs délais.",
+      "error_title": "Erreur lors de l'envoi",
+      "error_desc": "Réessayez ou contactez-moi directement par email."
     }
   }
 }

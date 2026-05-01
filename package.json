@@ -15,18 +15,22 @@
     "@iconify-json/simple-icons": "^1.2.78",
     "@nuxt/content": "3.13.0",
     "@nuxt/image": "^2.0.0",
+    "@nuxt/scripts": "^0.13.4",
     "@nuxt/ui": "^4.6.1",
     "@nuxtjs/i18n": "10.2.4",
+    "@nuxtjs/turnstile": "1.1.2",
     "@takumi-rs/core": "^1.0.14",
     "@vueuse/nuxt": "14.2.1",
     "better-sqlite3": "^12.9.0",
     "motion-v": "^2.2.1",
+    "nodemailer": "^8.0.7",
     "nuxt": "^4.4.2",
     "nuxt-og-image": "^6.4.4",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.15.2",
+    "@types/nodemailer": "^8.0.0",
     "eslint": "^10.2.0",
     "typescript": "^6.0.2",
     "vue-tsc": "^3.2.6"

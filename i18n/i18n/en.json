@@ -190,62 +190,45 @@
     }
   },
   "contact": {
-    "seo": {
-      "title": "Contact"
-    },
+    "seo_title": "Contact",
     "hero": {
-      "title_1": "Let's work",
-      "title_2": "together.",
-      "description": "An opportunity, a freelance project, or just want to chat?\nI am available and open to discussion."
+      "title_line1": "Let's work",
+      "title_line2": "together.",
+      "description": "An opportunity, a freelance project, or just want to chat? I'm available and open to discussion."
     },
     "cards": {
-      "direct": {
-        "title": "Direct contact",
-        "description": "The fastest way to reach me."
-      },
-      "availability": {
-        "title": "Availability",
-        "status": "Open",
-        "description": "Fullstack permanent contract with DevOps dimension."
-      },
-      "socials": {
-        "title": "Socials"
-      }
+      "direct_title": "Direct contact",
+      "direct_desc": "The fastest way to reach me.",
+      "availability_title": "Availability",
+      "availability_status": "Open",
+      "availability_desc_line1": "Fullstack developer (Permanent/CDI) with DevOps skills.",
+      "availability_desc_line2": "Reims · Paris · Remote.",
+      "socials_title": "Socials"
     },
     "form": {
-      "header": {
-        "title": "Send a message",
-        "description": "I usually reply within 24 hours."
-      },
-      "fields": {
-        "name": {
-          "label": "Name"
-        },
-        "email": {
-          "label": "Email"
-        },
-        "message": {
-          "label": "Message",
-          "placeholder": "Describe your project, opportunity or question..."
-        }
-      },
-      "footer": {
-        "privacy": "Your data is never shared."
-      },
-      "buttons": {
-        "submit": "Send",
-        "sent": "Sent!"
-      }
+      "header_title": "Send a message",
+      "header_subtitle": "I usually reply within 24 hours.",
+      "label_name": "Your name",
+      "placeholder_name": "John Doe",
+      "label_email": "Professional email",
+      "label_company": "Company",
+      "placeholder_company": "Acme Corp",
+      "label_contract": "Contract type",
+      "contract_freelance": "Freelance",
+      "contract_internship": "Internship",
+      "placeholder_select": "Select...",
+      "warning_cdi": "I am exclusively looking for a permanent contract (CDI).",
+      "label_message": "Message",
+      "placeholder_message": "Describe the position, team context, tech stack used...",
+      "privacy_note": "Your data is never shared.",
+      "btn_send": "Send",
+      "btn_sent": "Sent!"
     },
-    "toast": {
-      "success": {
-        "title": "Message sent!",
-        "description": "I will get back to you as soon as possible."
-      },
-      "error": {
-        "title": "Error",
-        "description": "Sending failed. Please try again or contact me directly."
-      }
+    "notifications": {
+      "success_title": "Message sent!",
+      "success_desc": "I will get back to you as soon as possible.",
+      "error_title": "Error while sending",
+      "error_desc": "Please try again or contact me directly by email."
     }
   }
 }

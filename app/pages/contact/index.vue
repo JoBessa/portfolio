@@ -1,203 +1,264 @@
 <script setup lang="ts">
+import type { SelectItem } from '@nuxt/ui'
+import { isJSDocNamepathType } from 'typescript'
+
 const { t } = useI18n()
+useSeoMeta({ title: computed(() => t('contact.seo_title')) })
 
-useSeoMeta({
-    title: () => t('seo.contact.title'),
-    ogTitle: () => t('seo.contact.title'),
-    description: () => t('seo.contact.description'),
-    ogDescription: () => t('seo.contact.description')
-})
+// ── Types ────────────────────────────────────────────────────────────────────
+type ContractType = 'CDI' | 'CDD' | 'freelance' | 'stage'
 
-const name = ref('')
+// ── Form state ───────────────────────────────────────────────────────────────
+const senderName = ref('')
 const email = ref('')
+const company = ref('')
+const contractType = ref<ContractType | undefined>(undefined)
 const message = ref('')
+const turnstileToken = ref('')
+
 const loading = ref(false)
 const sent = ref(false)
 const toast = useToast()
 
+// ── Computed Translations ───────────────────────────────────────────────────
+const contractItems = computed<SelectItem[]>(() => [
+    { label: 'CDI', value: 'CDI' },
+    { label: 'CDD', value: 'CDD' },
+    { label: t('contact.form.contract_freelance'), value: 'freelance' },
+    { label: t('contact.form.contract_internship'), value: 'stage' },
+])
+
+const socials = [
+    { name: 'GitHub', url: 'https://github.com/Jonatbes', icon: 'simple-icons:github' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jonathan-bessa-137691216/', icon: 'simple-icons:linkedin' },
+]
+
+// ── Validation ───────────────────────────────────────────────────────────────
+const isFormValid = computed(() =>
+    !!senderName.value.trim() &&
+    !!email.value.trim() &&
+    !!company.value.trim() &&
+    contractType.value !== undefined &&
+    !!message.value.trim() &&
+    !!turnstileToken.value
+)
+
+const isNonCdi = computed(() =>
+    contractType.value !== undefined && contractType.value !== 'CDI'
+)
+
+// ── Submit ───────────────────────────────────────────────────────────────────
+const reset = () => {
+    senderName.value = ''
+    email.value = ''
+    company.value = ''
+    contractType.value = undefined
+    message.value = ''
+    turnstileToken.value = ''
+}
+
 const submit = async () => {
+    if (!isFormValid.value) return
     loading.value = true
     try {
         await $fetch('/api/contact', {
             method: 'POST',
-            body: { name: name.value, email: email.value, message: message.value }
+            body: {
+                name: senderName.value,
+                email: email.value,
+                company: company.value,
+                contractType: contractType.value,
+                message: message.value,
+                turnstileToken: turnstileToken.value,
+            },
         })
         sent.value = true
         toast.add({
-            title: t('contact.toast.success.title'),
-            description: t('contact.toast.success.description'),
+            title: t('contact.notifications.success_title'),
+            description: t('contact.notifications.success_desc'),
             color: 'success',
-            icon: 'lucide-check-circle'
+            icon: 'lucide-check-circle',
         })
-        name.value = ''
-        email.value = ''
-        message.value = ''
-        setTimeout(() => sent.value = false, 4000)
+        reset()
+        setTimeout(() => { sent.value = false }, 5000)
     } catch {
         toast.add({
-            title: t('contact.toast.error.title'),
-            description: t('contact.toast.error.description'),
+            title: t('contact.notifications.error_title'),
+            description: t('contact.notifications.error_desc'),
             color: 'error',
-            icon: 'lucide-alert-circle'
+            icon: 'lucide-alert-circle',
         })
     } finally {
         loading.value = false
     }
 }
-
-const socials = [
-    { name: 'GitHub', url: 'https://github.com/JBessa', icon: 'simple-icons:github' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jonathan-bessa-137691216/', icon: 'simple-icons:linkedin' }
-]
 </script>
 
 <template>
     <UPage>
-        <UPageHero class="relative overflow-hidden" :ui="{
-            container: 'pb-8 sm:pb-8 lg:pb-8'
+        <!-- ── HERO ──────────────────────────────────────────────────────── -->
+        <UPageHero :ui="{
+            container: 'pb-0 sm:pb-0 lg:pb-0'
         }">
             <template #title>
                 <Motion :initial="{ opacity: 0, y: 24 }" :while-in-view="{ opacity: 1, y: 0 }"
                     :transition="{ duration: 0.55 }" :in-view-options="{ once: true }">
-                    <span class="block">{{ t('contact.hero.title_1') }}</span>
-                    <span class="block text-primary">{{ t('contact.hero.title_2') }}</span>
+                    <span>{{ t('contact.hero.title_line1') }}</span><br><span class="text-primary">{{
+                        t('contact.hero.title_line2') }}</span>
                 </Motion>
             </template>
             <template #description>
                 <Motion :initial="{ opacity: 0, y: 20 }" :while-in-view="{ opacity: 1, y: 0 }"
                     :transition="{ delay: 0.15, duration: 0.5 }" :in-view-options="{ once: true }">
-                    <span v-html="t('contact.hero.description')"></span>
+                    {{ t('contact.hero.description') }}
                 </Motion>
             </template>
         </UPageHero>
+
+        <!-- ── MAIN CONTENT ──────────────────────────────────────────────── -->
         <UPageSection :ui="{
-            container: 'py-0 sm:py-0 lg:py-0'
+            container: 'py-6 sm:py-8 lg:py-8'
         }">
-            <div class="mx-auto max-w-5xl">
+            <div class="mx-auto">
                 <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
 
-                    <!-- Left column — info cards -->
-                    <div class="lg:col-span-2 flex flex-col gap-5 justify-between h-full">
-
-                        <!-- Email -->
+                    <!-- Left — info cards -->
+                    <div class="lg:col-span-2 flex flex-col gap-4">
                         <Motion :initial="{ opacity: 0, x: -20 }" :while-in-view="{ opacity: 1, x: 0 }"
                             :transition="{ delay: 0.1, duration: 0.5 }" :in-view-options="{ once: true }">
-                            <UPageCard spotlight
-                                class="group relative overflow-hidden transition-shadow hover:shadow-lg hover:shadow-primary/5">
+                            <UPageCard class="relative overflow-hidden" spotlight>
                                 <UIcon name="lucide-mail"
-                                    class="absolute -right-4 -top-4 size-24 text-(--ui-text-muted) opacity-10 pointer-events-none transition-transform group-hover:scale-110" />
-
-                                <div class="relative z-10 min-w-0">
-                                    <p class="text-sm font-semibold text-(--ui-text)">{{ t('contact.cards.direct.title')
-                                        }}</p>
-                                    <p class="mt-1 text-xs text-(--ui-text-muted) leading-relaxed">
-                                        {{ t('contact.cards.direct.description') }}
+                                    class="absolute -top-2 -right-2 size-18 text-muted opacity-10 pointer-events-none select-none" />
+                                <div class="flex flex-col gap-1">
+                                    <p class="text-sm font-semibold text-default">{{ t('contact.cards.direct_title')
+                                    }}
                                     </p>
-                                    <a href="mailto:jonathan.bessa@gmail.com"
-                                        class="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline underline-offset-4 transition-colors">
-                                        jonathan.bessa@gmail.com
-                                        <UIcon name="lucide-arrow-up-right" class="size-3 opacity-70" />
+                                    <p class="text-xs text-muted leading-relaxed">
+                                        {{ t('contact.cards.direct_desc') }}
+                                    </p>
+                                    <a href="mailto:dbessa.jonathan@gmail.com"
+                                        class="mt-1.5 text-xs font-medium text-primary hover:underline underline-offset-4 transition-colors w-fit">
+                                        dbessa.jonathan@gmail.com
                                     </a>
                                 </div>
                             </UPageCard>
                         </Motion>
 
-                        <!-- Availability -->
                         <Motion :initial="{ opacity: 0, x: -20 }" :while-in-view="{ opacity: 1, x: 0 }"
                             :transition="{ delay: 0.2, duration: 0.5 }" :in-view-options="{ once: true }">
-                            <UPageCard spotlight
-                                class="group relative overflow-hidden transition-shadow hover:shadow-lg hover:shadow-primary/5">
+                            <UPageCard class="relative overflow-hidden" spotlight>
                                 <UIcon name="lucide-calendar-check"
-                                    class="absolute -right-4 -top-4 size-24 text-(--ui-text-muted) opacity-10 pointer-events-none transition-transform group-hover:scale-110" />
-
-                                <div class="relative z-10">
+                                    class="absolute -top-2 -right-2 size-18 text-muted opacity-10 pointer-events-none select-none" />
+                                <div class="flex flex-col gap-1">
                                     <div class="flex items-center gap-2">
-                                        <p class="text-sm font-semibold text-(--ui-text)">{{
-                                            t('contact.cards.availability.title') }}</p>
-                                        <span
-                                            class="inline-flex items-center gap-1 rounded-full bg-green-500/10 px-2 py-0.5 text-xs font-medium text-green-500">
-                                            <span class="size-1.5 rounded-full bg-green-500 animate-pulse" />
-                                            {{ t('contact.cards.availability.status') }}
-                                        </span>
+                                        <p class="text-sm font-semibold text-default">{{
+                                            t('contact.cards.availability_title')
+                                        }}</p>
+                                        <UBadge color="success" variant="soft" size="xs">
+                                            <span class="size-1.5 rounded-full bg-green-500 animate-pulse mr-1" />
+                                            {{ t('contact.cards.availability_status') }}
+                                        </UBadge>
                                     </div>
-                                    <p class="mt-2 text-xs text-(--ui-text-muted) leading-relaxed"
-                                        v-html="t('contact.cards.availability.description')"></p>
+                                    <p class="text-xs text-muted leading-relaxed">{{
+                                        t('contact.cards.availability_desc_line1')
+                                    }}</p>
+                                    <p class="text-xs text-muted leading-relaxed">{{
+                                        t('contact.cards.availability_desc_line2')
+                                    }}</p>
                                 </div>
                             </UPageCard>
                         </Motion>
 
-                        <!-- Socials -->
                         <Motion :initial="{ opacity: 0, x: -20 }" :while-in-view="{ opacity: 1, x: 0 }"
                             :transition="{ delay: 0.3, duration: 0.5 }" :in-view-options="{ once: true }">
-                            <UPageCard spotlight
-                                class="group relative overflow-hidden transition-shadow hover:shadow-lg hover:shadow-primary/5">
+                            <UPageCard class="relative overflow-hidden" spotlight>
                                 <UIcon name="lucide-share-2"
-                                    class="absolute -right-4 -top-4 size-24 text-(--ui-text-muted) opacity-10 pointer-events-none transition-transform group-hover:scale-110" />
-
-                                <div class="relative z-10 w-full">
-                                    <p class="text-sm font-semibold text-(--ui-text) mb-3">{{
-                                        t('contact.cards.socials.title')
-                                        }}</p>
+                                    class="absolute -top-2 -right-2 size-18 text-muted opacity-10 pointer-events-none select-none" />
+                                <div class="flex flex-col gap-2">
+                                    <p class="text-sm font-semibold text-default">{{
+                                        t('contact.cards.socials_title') }}
+                                    </p>
                                     <div class="flex gap-2">
                                         <UTooltip v-for="social in socials" :key="social.name" :text="social.name">
-                                            <UButton :to="social.url" target="_blank" color="neutral" variant="soft"
-                                                :icon="social.icon" size="md"
-                                                class="hover:text-primary transition-colors" />
+                                            <UButton :to="social.url" target="_blank" color="neutral" variant="ghost"
+                                                :icon="social.icon" size="md" />
                                         </UTooltip>
                                     </div>
                                 </div>
                             </UPageCard>
                         </Motion>
-
                     </div>
 
-                    <!-- Right column — form -->
+                    <!-- Right — form -->
                     <Motion class="lg:col-span-3" :initial="{ opacity: 0, y: 24 }" :while-in-view="{ opacity: 1, y: 0 }"
-                        :transition="{ delay: 0.25, duration: 0.55 }" :in-view-options="{ once: true }">
-                        <UPageCard spotlight
-                            class="group relative overflow-hidden transition-shadow hover:shadow-lg hover:shadow-primary/5">
+                        :transition="{ delay: 0.2, duration: 0.55 }" :in-view-options="{ once: true }">
+                        <UPageCard class="relative overflow-hidden" spotlight>
+                            <UIcon name="lucide-message-square-text"
+                                class="absolute -top-2 -right-2 size-18 text-muted opacity-15 pointer-events-none select-none" />
+
                             <template #header>
-                                <div class="gap-3 pt-6 pb-1">
-                                    <p class="text-base font-semibold text-(--ui-text)">{{
-                                        t('contact.form.header.title') }}</p>
-                                    <p class="text-sm mt-1 text-(--ui-text-muted)">{{
-                                        t('contact.form.header.description') }}</p>
+                                <div class="px-1 pt-1">
+                                    <p class="font-semibold text-default">{{ t('contact.form.header_title') }}</p>
+                                    <p class="text-xs text-muted mt-0.5">
+                                        {{ t('contact.form.header_subtitle') }}
+                                    </p>
                                 </div>
                             </template>
 
-                            <form class="flex flex-col gap-4" @submit.prevent="submit">
+                            <form class="flex flex-col gap-5" @submit.prevent="submit">
                                 <div class="grid sm:grid-cols-2 gap-4">
-                                    <UFormField :label="t('contact.form.fields.name.label')" required>
-                                        <UInput v-model="name" placeholder="John Doe" size="lg" class="w-full"
-                                            required />
+                                    <UFormField :label="t('contact.form.label_name')" required>
+                                        <UInput v-model="senderName" :placeholder="t('contact.form.placeholder_name')"
+                                            size="lg" class="w-full" autocomplete="name" required />
                                     </UFormField>
-                                    <UFormField :label="t('contact.form.fields.email.label')" required>
-                                        <UInput v-model="email" type="email" placeholder="john.doe@example.com"
-                                            size="lg" class="w-full" required />
+                                    <UFormField :label="t('contact.form.label_email')" required>
+                                        <UInput v-model="email" type="email" placeholder="john.doe@john.com" size="lg"
+                                            class="w-full" autocomplete="email" required />
                                     </UFormField>
                                 </div>
 
-                                <UFormField :label="t('contact.form.fields.message.label')" required>
-                                    <UTextarea v-model="message"
-                                        :placeholder="t('contact.form.fields.message.placeholder')" :rows="6" size="lg"
-                                        class="w-full resize-none" required />
+                                <UFormField :label="t('contact.form.label_company')" required>
+                                    <UInput v-model="company" :placeholder="t('contact.form.placeholder_company')"
+                                        size="lg" class="w-full" autocomplete="organization" required />
                                 </UFormField>
 
+                                <UFormField :label="t('contact.form.label_contract')" required>
+                                    <USelect v-model="contractType" :items="contractItems"
+                                        :placeholder="t('contact.form.placeholder_select')" size="lg" class="w-full" />
+                                    <Transition enter-active-class="transition-all duration-200"
+                                        enter-from-class="opacity-0 -translate-y-1"
+                                        enter-to-class="opacity-100 translate-y-0"
+                                        leave-active-class="transition-all duration-150"
+                                        leave-from-class="opacity-100 translate-y-0"
+                                        leave-to-class="opacity-0 -translate-y-1">
+                                        <p v-if="isNonCdi" class="mt-1.5 text-xs text-warning flex items-center gap-1">
+                                            <UIcon name="lucide-alert-triangle" class="size-3 shrink-0" />
+                                            {{ t('contact.form.warning_cdi') }}
+                                        </p>
+                                    </Transition>
+                                </UFormField>
+
+                                <UFormField :label="t('contact.form.label_message')" required>
+                                    <UTextarea v-model="message" :placeholder="t('contact.form.placeholder_message')"
+                                        :rows="5" size="lg" class="w-full" required />
+                                </UFormField>
+
+                                <NuxtTurnstile v-model="turnstileToken" :options="{ theme: 'auto' }" class="hidden" />
+
                                 <div class="flex items-center justify-between gap-4 pt-1">
-                                    <p class="text-xs text-(--ui-text-muted)">
-                                        <UIcon name="lucide-lock" class="inline size-3 mr-1 opacity-60" />
-                                        {{ t('contact.form.footer.privacy') }}
+                                    <p class="text-xs text-muted flex items-center gap-1.5">
+                                        <UIcon name="lucide-lock" class="size-3 shrink-0" />
+                                        {{ t('contact.form.privacy_note') }}
                                     </p>
-                                    <UButton type="submit" size="lg" :loading="loading"
+                                    <UButton type="submit" size="lg" :loading="loading" :disabled="!isFormValid"
                                         :icon="sent ? 'lucide-check' : 'lucide-send'"
-                                        :color="sent ? 'success' : 'primary'" class="shrink-0 transition-all">
-                                        {{ sent ? t('contact.form.buttons.sent') : t('contact.form.buttons.submit') }}
+                                        :color="sent ? 'success' : 'primary'" class="shrink-0">
+                                        {{ sent ? t('contact.form.btn_sent') : t('contact.form.btn_send') }}
                                     </UButton>
                                 </div>
                             </form>
                         </UPageCard>
                     </Motion>
-
                 </div>
             </div>
         </UPageSection>

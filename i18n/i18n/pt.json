@@ -190,62 +190,45 @@
     }
   },
   "contact": {
-    "seo": {
-      "title": "Contacto"
-    },
+    "seo_title": "Contacto",
     "hero": {
-      "title_1": "Vamos trabalhar",
-      "title_2": "juntos.",
-      "description": "Uma oportunidade, um projeto freelance ou apenas quer conversar?\nEstou disponível e aberto a discussão."
+      "title_line1": "Vamos trabalhar",
+      "title_line2": "juntos.",
+      "description": "Uma oportunidade, um projeto freelance, ou apenas vontade de conversar? Estou disponível e aberto à discussão."
     },
     "cards": {
-      "direct": {
-        "title": "Contacto direto",
-        "description": "A forma mais rápida de me contactar."
-      },
-      "availability": {
-        "title": "Disponibilidade",
-        "status": "Aberto",
-        "description": "Contrato CDI Fullstack com dimensão DevOps."
-      },
-      "socials": {
-        "title": "Redes Sociais"
-      }
+      "direct_title": "Contacto direto",
+      "direct_desc": "A forma mais rápida de me contactar.",
+      "availability_title": "Disponibilidade",
+      "availability_status": "Aberto",
+      "availability_desc_line1": "Desenvolvedor Fullstack (CDI) com vertente DevOps.",
+      "availability_desc_line2": "Reims · Paris · Remoto.",
+      "socials_title": "Redes sociais"
     },
     "form": {
-      "header": {
-        "title": "Enviar uma mensagem",
-        "description": "Normalmente respondo em 24 horas."
-      },
-      "fields": {
-        "name": {
-          "label": "Nome"
-        },
-        "email": {
-          "label": "Email"
-        },
-        "message": {
-          "label": "Mensagem",
-          "placeholder": "Descreva o seu projeto, oportunidade ou pergunta..."
-        }
-      },
-      "footer": {
-        "privacy": "Os seus dados nunca são partilhados."
-      },
-      "buttons": {
-        "submit": "Enviar",
-        "sent": "Enviado!"
-      }
+      "header_title": "Enviar uma mensagem",
+      "header_subtitle": "Costumo responder em 24h.",
+      "label_name": "O seu nome",
+      "placeholder_name": "Maria Silva",
+      "label_email": "Email profissional",
+      "label_company": "Empresa",
+      "placeholder_company": "Acme Corp",
+      "label_contract": "Tipo de contrato",
+      "contract_freelance": "Freelance",
+      "contract_internship": "Estágio",
+      "placeholder_select": "Selecionar...",
+      "warning_cdi": "Procuro exclusivamente um contrato permanente (CDI).",
+      "label_message": "Mensagem",
+      "placeholder_message": "Descreva a função, o contexto da equipa, as tecnologias utilizadas...",
+      "privacy_note": "Os seus dados nunca são partilhados.",
+      "btn_send": "Enviar",
+      "btn_sent": "Enviado!"
     },
-    "toast": {
-      "success": {
-        "title": "Mensagem enviada!",
-        "description": "Responderei o mais brevemente possível."
-      },
-      "error": {
-        "title": "Erro",
-        "description": "Falha no envio. Por favor tente novamente ou contacte-me diretamente."
-      }
+    "notifications": {
+      "success_title": "Mensagem enviada!",
+      "success_desc": "Responderei o mais brevemente possível.",
+      "error_title": "Erro ao enviar",
+      "error_desc": "Tente novamente ou contacte-me diretamente por email."
     }
   }
 }
