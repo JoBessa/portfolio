@@ -11,7 +11,7 @@ interface Experience {
     link: string
 }
 
-const experiences: Experience[] = [
+const experiences = computed<Experience[]>(() => [
     {
         company: 'EthiFinance',
         role: {
@@ -39,7 +39,7 @@ const experiences: Experience[] = [
         period: '2019 — 2022',
         link: '',
     },
-]
+])
 </script>
 
 <template>
