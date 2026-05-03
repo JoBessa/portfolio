@@ -54,7 +54,9 @@ const experiences = computed<Experience[]>(() => [
                 <p class="text-muted text-balance text-sm">{{ t('home.aboutme.summary') }}</p>
             </MotionInView>
             <div class="w-full h-full">
-                <p class="text-neutral font-bold text-xl mb-4 text-start">Work Experience</p>
+                <MotionInView>
+                    <p class="text-neutral font-bold text-xl mb-4 text-start">Work Experience</p>
+                </MotionInView>
                 <div class="flex flex-col gap-4 text-neutral text-xs sm:text-sm">
                     <MotionInView v-for="(experience, index) in experiences" :key="index"
                         :initial="{ opacity: 0, transform: 'translateY(20px)' }"

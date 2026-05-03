@@ -80,12 +80,17 @@ const cards = computed<ArsenalCard[]>(() => [
 </script>
 
 <template>
-    <UPageSection :description="t('home.arsenal.description')" :ui="{
+    <UPageSection :ui="{
         container: 'py-0 sm:py-0 lg:py-0'
     }">
         <template #title>
             <MotionInView>
                 {{ t('home.arsenal.title') }}
+            </MotionInView>
+        </template>
+        <template #description>
+            <MotionInView>
+                {{ t('home.arsenal.description') }}
             </MotionInView>
         </template>
         <UPageGrid :ui="{

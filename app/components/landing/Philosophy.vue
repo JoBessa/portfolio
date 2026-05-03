@@ -34,16 +34,21 @@ const stats = computed<PhilosophyStat[]>(() => [
         description: t('home.philosophy.scalable.description'),
         icon: 'lucide:gauge',
         labels: ['Node.js', 'Nuxt', 'PostgreSQL', 'Redis', 'DX'],
-        class: "col-span-1 md:col-span-2"
+        class: "col-span-1 sm:col-span-2"
     }
 ])
 </script>
 
 <template>
-    <UPageSection :description="t('home.philosophy.description')">
+    <UPageSection>
         <template #title>
             <MotionInView>
                 {{ t('home.philosophy.title') }}
+            </MotionInView>
+        </template>
+        <template #description>
+            <MotionInView>
+                {{ t('home.philosophy.description') }}
             </MotionInView>
         </template>
         <UPageGrid class="grid-cols-1 md:grid-cols-2 lg:grid-cols-2">

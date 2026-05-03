@@ -28,6 +28,7 @@ useSeoMeta({
 
 <template>
   <UApp>
+    <LoadingScreen />
     <NuxtLayout>
       <UMain class="relative">
         <NuxtPage :transition="{

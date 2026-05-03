@@ -1,30 +1,19 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
+
 const { data: projects } = await useAsyncData(
-    'projects-featured',
+    `projects-featured-${locale.value}`,
     () => queryCollection('projects')
         .where('path', 'LIKE', `%/${locale.value}/%`)
         .where('featured', '=', true)
         .order('order', 'ASC')
         .all(),
-    {
-        watch: [locale],
-        // Ne pas réutiliser le payload SSR côté client si locale diffère
-        getCachedData(key, nuxtApp) {
-            const cached = nuxtApp.payload.data[key] ?? nuxtApp.static.data[key]
-            if (!cached) return undefined
-            // Si les projets cachés ne matchent pas la locale courante, on re-fetch
-            if (cached.length && !cached[0].path?.includes(`/${locale.value}/`)) {
-                return undefined
-            }
-            return cached
-        }
-    }
+    { watch: [locale] }
 )
 </script>
 
 <template>
-    <UPageSection :description="t('projects.description')" :links="[{
+    <UPageSection :links="[{
         label: t('home.projects.viewAll'),
         to: '/projects',
         color: 'neutral',
@@ -39,11 +28,16 @@ const { data: projects } = await useAsyncData(
                 {{ t('projects.title') }}
             </MotionInView>
         </template>
-        <div v-if="projects?.length" :key="`projects-${locale}`" class="grid grid-cols-1 gap-6">
+        <template #description>
+            <MotionInView>
+                {{ t('projects.description') }}
+            </MotionInView>
+        </template>
+        <div v-if="projects?.length" :key="`projects-${locale}`" class="grid grid-cols-1 gap-6 pt-6 lg:pt-0">
             <MotionInView v-for="(project, index) in projects" :key="index" :delay="0.2 + 0.15 * index">
                 <UPageCard variant="soft" class="group overflow-hidden p-0 h-full" :ui="{
                     root: 'md:bg-transparent md:ring-0',
-                    container: 'sm:p-0 p-0 md:grid md:grid-cols-2 md:items-center'
+                    container: 'sm:p-0 sm:grid sm:grid-cols-2 sm:items-center'
                 }">
                     <!-- Image -->
                     <div class="relative overflow-hidden aspect-video bg-muted"
@@ -91,8 +85,10 @@ const { data: projects } = await useAsyncData(
         </div>
 
         <!-- Empty state -->
-        <UPageCard v-else title="Aucun projet épinglé"
-            description="Ajoutez pinned: true dans le frontmatter de vos projets." variant="subtle"
-            orientation="horizontal" />
+        <MotionInView v-else>
+            <UPageCard title="Aucun projet épinglé"
+                description="Ajoutez pinned: true dans le frontmatter de vos projets." variant="subtle"
+                orientation="horizontal" />
+        </MotionInView>
     </UPageSection>
 </template>
