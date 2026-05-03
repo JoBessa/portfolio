@@ -1,13 +1,25 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
-const { data: projects, refresh } = await useAsyncData(
-    `projects-featured-${locale.value}`,  // ← clé string, pas fonction
+const { data: projects } = await useAsyncData(
+    'projects-featured',
     () => queryCollection('projects')
         .where('path', 'LIKE', `%/${locale.value}/%`)
         .where('featured', '=', true)
         .order('order', 'ASC')
         .all(),
-    { watch: [locale] } 
+    {
+        watch: [locale],
+        // Ne pas réutiliser le payload SSR côté client si locale diffère
+        getCachedData(key, nuxtApp) {
+            const cached = nuxtApp.payload.data[key] ?? nuxtApp.static.data[key]
+            if (!cached) return undefined
+            // Si les projets cachés ne matchent pas la locale courante, on re-fetch
+            if (cached.length && !cached[0].path?.includes(`/${locale.value}/`)) {
+                return undefined
+            }
+            return cached
+        }
+    }
 )
 </script>
 
