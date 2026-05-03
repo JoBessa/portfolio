@@ -42,18 +42,12 @@ const stats = computed<PhilosophyStat[]>(() => [
 <template>
     <UPageSection :description="t('home.philosophy.description')">
         <template #title>
-            <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ duration: 0.5 }"
-                :in-view-options="{ once: true }">
+            <MotionInView>
                 {{ t('home.philosophy.title') }}
-            </Motion>
+            </MotionInView>
         </template>
         <UPageGrid class="grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-            <Motion v-for="(stat, index) in stats" :key="stat.id"
-                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ delay: 0.2 + 0.15 * index, duration: 0.5 }" :in-view-options="{ once: true }"
-                :class="stat.class">
+            <MotionInView v-for="(stat, index) in stats" :key="stat.id" :delay="0.15 + 0.1 * index" :class="stat.class">
                 <UPageCard class="overflow-hidden h-full" variant="subtle"
                     :class="(index === 2) ? 'ring-2 ring-primary' : ''">
                     <div class=" text-7xl font-bold text-muted flex justify-between">
@@ -73,7 +67,7 @@ const stats = computed<PhilosophyStat[]>(() => [
                         </UBadge>
                     </div>
                 </UPageCard>
-            </Motion>
+            </MotionInView>
         </UPageGrid>
     </UPageSection>
 </template>

@@ -23,17 +23,12 @@ const { data: projects } = await useAsyncData(
         container: 'sm:gap-0 lg:gap-8 py-6 sm:py-12 lg:py-18'
     }">
         <template #title>
-            <Motion :key="`title-${locale}`" :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ duration: 0.5 }"
-                :in-view-options="{ once: true }">
+            <MotionInView>
                 {{ t('projects.title') }}
-            </Motion>
+            </MotionInView>
         </template>
         <div v-if="projects?.length" :key="`projects-${locale}`" class="grid grid-cols-1 gap-6">
-            <Motion v-for="(project, index) in projects" :key="project.path"
-                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ delay: 0.2 + 0.15 * index, duration: 0.5 }" :in-view-options="{ once: true }">
+            <MotionInView v-for="(project, index) in projects" :key="index" :delay="0.2 + 0.15 * index">
                 <UPageCard variant="soft" class="group overflow-hidden p-0 h-full" :ui="{
                     root: 'md:bg-transparent md:ring-0',
                     container: 'sm:p-0 p-0 md:grid md:grid-cols-2 md:items-center'
@@ -80,7 +75,7 @@ const { data: projects } = await useAsyncData(
                         </div>
                     </div>
                 </UPageCard>
-            </Motion>
+            </MotionInView>
         </div>
 
         <!-- Empty state -->

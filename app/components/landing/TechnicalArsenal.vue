@@ -84,19 +84,14 @@ const cards = computed<ArsenalCard[]>(() => [
         container: 'py-0 sm:py-0 lg:py-0'
     }">
         <template #title>
-            <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ duration: 0.5 }"
-                :in-view-options="{ once: true }">
+            <MotionInView>
                 {{ t('home.arsenal.title') }}
-            </Motion>
+            </MotionInView>
         </template>
         <UPageGrid :ui="{
             base: 'relative grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'
         }">
-            <Motion v-for="(card, index) in cards" :key="index" :class="card.class"
-                :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ delay: 0.15 + 0.1 * index, duration: 0.5 }" :in-view-options="{ once: true }">
+            <MotionInView v-for="(card, index) in cards" :key="index" :class="card.class" :delay="0.15 + 0.1 * index">
                 <UPageCard :title="card.title" variant="subtle" :description="card.description" class="h-full"
                     :class="index === 2 ? 'ring-0 md:ring-2 lg:ring-0 ring-primary' : ''">
                     <template #footer>
@@ -110,7 +105,7 @@ const cards = computed<ArsenalCard[]>(() => [
                         </div>
                     </template>
                 </UPageCard>
-            </Motion>
+            </MotionInView>
         </UPageGrid>
     </UPageSection>
 </template>

@@ -30,16 +30,12 @@ const links = computed<ButtonProps[]>(() => [
     links: 'justify-center lg:justify-start',
   }">
     <template #title>
-      <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ delay: 0.2, duration: 0.5 }"
-        :in-view-options="{ once: true }">
+      <MotionInView>
         {{ t('hero.name') }}
-      </Motion>
+      </MotionInView>
     </template>
     <template #headline>
-      <Motion :initial="{ opacity: 0, transform: 'translateY(-10px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ delay: 0.1, duration: 0.5 }"
-        :in-view-options="{ once: true }">
+      <MotionInView>
         <UButton color="success" variant="ghost" class="gap-2 cursor-pointer" :label="t('hero.available_badge')">
           <template #leading>
             <span class="relative flex size-2">
@@ -48,32 +44,26 @@ const links = computed<ButtonProps[]>(() => [
             </span>
           </template>
         </UButton>
-      </Motion>
+      </MotionInView>
     </template>
     <template #description>
-      <Motion :initial="{ opacity: 0, transform: 'translateY(15px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ delay: 0.3, duration: 0.5 }"
-        :in-view-options="{ once: true }">
+      <MotionInView>
         <p class="text-pretty text-center lg:text-start">{{ t('hero.tagline') }}</p>
         <p class="text-pretty text-center lg:text-start">{{ t('hero.role') }}</p>
-      </Motion>
+      </MotionInView>
     </template>
     <template #links>
-      <Motion v-for="(link, index) in links" :key="link.label" :initial="{ opacity: 0, transform: 'translateY(10px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-        :transition="{ delay: 0.5 + 0.1 * index, duration: 0.4 }" :in-view-options="{ once: true }">
+      <MotionInView v-for="(link, index) in links" :key="link.label" :delay="0.5 + 0.1 * index">
         <UButton size="lg" :to="link.to" :external="link.external" :download="link.download" :icon="link.icon"
           :variant="link.variant" :trailing-icon="link.trailingIcon">
           {{ link.label }}
         </UButton>
-      </Motion>
+      </MotionInView>
     </template>
-    <Motion :initial="{ opacity: 0, transform: 'scale(0.95)' }" :while-in-view="{ opacity: 1, transform: 'scale(1)' }"
-      :transition="{ delay: 0.4, duration: 0.6 }" :in-view-options="{ once: true }"
-      class="flex items-center justify-center lg:justify-end">
+    <MotionInView :delay="0.4" class="flex items-center justify-center lg:justify-end">
       <UColorModeImage width="300" height="300"
         class="rounded-full w-1/2 h-1/2 md:w-1/3 md:h-1/3 lg:w-full lg:h-full lg:rounded-md aspect-square object-cover"
         light="/images/me-light.png" dark="/images/me-dark.jpg" />
-    </Motion>
+    </MotionInView>
   </UPageHero>
 </template>

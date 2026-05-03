@@ -49,16 +49,14 @@ const experiences = computed<Experience[]>(() => [
         <UPageGrid :ui="{
             base: 'grid-cols-1 md:grid-cols-1 lg:grid-cols-2 h-full'
         }">
-            <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ delay: 0.2, duration: 0.5 }"
-                :in-view-options="{ once: true }" class="w-full">
+            <MotionInView class="w-full">
                 <p class="text-neutral font-bold text-xl mb-4 test-start">About Me</p>
                 <p class="text-muted text-balance text-sm">{{ t('home.aboutme.summary') }}</p>
-            </Motion>
+            </MotionInView>
             <div class="w-full h-full">
                 <p class="text-neutral font-bold text-xl mb-4 text-start">Work Experience</p>
                 <div class="flex flex-col gap-4 text-neutral text-xs sm:text-sm">
-                    <Motion v-for="(experience, index) in experiences" :key="index"
+                    <MotionInView v-for="(experience, index) in experiences" :key="index"
                         :initial="{ opacity: 0, transform: 'translateY(20px)' }"
                         :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
                         :transition="{ delay: 0.4 + 0.2 * index }" :in-view-options="{ once: true }"
@@ -78,7 +76,7 @@ const experiences = computed<Experience[]>(() => [
                                 <span class="font-medium text-neutral">{{ experience.company }}</span>
                             </div>
                         </ULink>
-                    </Motion>
+                    </MotionInView>
                 </div>
             </div>
         </UPageGrid>

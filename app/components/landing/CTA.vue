@@ -8,9 +8,7 @@ const { t } = useI18n()
     }">
         <UPageCard class="overflow-hidden" variant="naked">
             <div class="flex flex-col gap-8">
-                <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-                    :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                    :transition="{ delay: 0.2, duration: 0.5 }" :in-view-options="{ once: true }" class="max-w-2xl">
+                <MotionInView class="max-w-2xl">
                     <UBadge :label="t('home.contact.eyebrow')" color="neutral" variant="subtle" class="mb-4" />
 
                     <h2 class="text-2xl font-semibold tracking-tight text-(--ui-text-highlighted) sm:text-2xl">
@@ -27,7 +25,7 @@ const { t } = useI18n()
                         <UBadge :label="t('home.contact.hybrid')" color="neutral" variant="subtle" />
                         <UBadge :label="t('home.contact.status')" color="neutral" variant="subtle" />
                     </div>
-                </Motion>
+                </MotionInView>
             </div>
         </UPageCard>
     </UPageSection>
