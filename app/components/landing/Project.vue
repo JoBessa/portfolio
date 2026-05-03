@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
-
-const { data: projects } = await useAsyncData(
-    () => `projects-featured-${locale.value}`, // ← réactif
+const { data: projects, refresh } = await useAsyncData(
+    `projects-featured-${locale.value}`,  // ← clé string, pas fonction
     () => queryCollection('projects')
         .where('path', 'LIKE', `%/${locale.value}/%`)
         .where('featured', '=', true)
         .order('order', 'ASC')
-        .all()
+        .all(),
+    { watch: [locale] } 
 )
 </script>
 
