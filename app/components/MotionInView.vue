@@ -10,6 +10,7 @@ onMounted(() => { isMounted.value = true })
 </script>
 
 <template>
+  <ClientOnly>
     <Motion v-if="isMounted" :initial="{ opacity: 0, transform: 'translateY(20px)' }"
         :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
         :transition="{ delay: delay ?? 0, duration: duration ?? 0.5 }" :in-view-options="{ once: true }">
@@ -17,4 +18,5 @@ onMounted(() => { isMounted.value = true })
     </Motion>
     <!-- Fallback SSR : visible direct, pas d'observer -->
     <slot v-else />
+  </ClientOnly>
 </template>
