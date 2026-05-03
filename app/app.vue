@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const colorMode = useColorMode()
 
 const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
@@ -14,7 +14,7 @@ useHead({
     { rel: 'icon', href: '/images/signature-dark.png' }
   ],
   htmlAttrs: {
-    lang: 'en'
+    lang: locale
   }
 })
 
