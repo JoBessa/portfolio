@@ -2,13 +2,12 @@
 const { t, locale } = useI18n()
 
 const { data: projects } = await useAsyncData(
-    `projects-featured-${locale.value}`,
+    () => `projects-featured-${locale.value}`, // ← réactif
     () => queryCollection('projects')
         .where('path', 'LIKE', `%/${locale.value}/%`)
         .where('featured', '=', true)
         .order('order', 'ASC')
-        .all(),
-    { watch: [locale] }
+        .all()
 )
 </script>
 
@@ -24,13 +23,13 @@ const { data: projects } = await useAsyncData(
         container: 'sm:gap-0 lg:gap-8 py-6 sm:py-12 lg:py-18'
     }">
         <template #title>
-            <Motion :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+            <Motion :key="`title-${locale}`" :initial="{ opacity: 0, transform: 'translateY(20px)' }"
                 :while-in-view="{ opacity: 1, transform: 'translateY(0)' }" :transition="{ duration: 0.5 }"
                 :in-view-options="{ once: true }">
                 {{ t('projects.title') }}
             </Motion>
         </template>
-        <div v-if="projects?.length" class="grid grid-cols-1 gap-6">
+        <div v-if="projects?.length" :key="`projects-${locale}`" class="grid grid-cols-1 gap-6">
             <Motion v-for="(project, index) in projects" :key="project.path"
                 :initial="{ opacity: 0, transform: 'translateY(20px)' }"
                 :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
