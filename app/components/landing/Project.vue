@@ -1,15 +1,20 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
 
-const { data: projects } = await useAsyncData(
+const { data: projects, status, refresh } = await useAsyncData(
     `projects-featured-${locale.value}`,
     () => queryCollection('projects')
         .where('path', 'LIKE', `%/${locale.value}/%`)
         .where('featured', '=', true)
         .order('order', 'ASC')
         .all(),
-    { watch: [locale] }
+    { watch: [locale], default: () => [] }
 )
+onMounted(() => {
+    if (!projects.value?.length && status.value !== 'pending') {
+        refresh()
+    }
+})
 </script>
 
 <template>

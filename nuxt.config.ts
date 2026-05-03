@@ -49,6 +49,11 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'en',
     strategy: 'no_prefix',
-    langDir: 'i18n/'
+    langDir: 'i18n/',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      alwaysRedirect: false
+    },
   }
 })
