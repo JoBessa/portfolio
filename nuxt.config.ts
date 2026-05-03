@@ -41,15 +41,6 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-11-01',
 
-  nitro: {
-    prerender: {
-      routes: [
-        '/'
-      ],
-      crawlLinks: true
-    }
-  },
-
   i18n: {
     locales: [
       { code: 'en', name: 'English', file: 'en.json' },
